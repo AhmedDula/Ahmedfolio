@@ -540,7 +540,7 @@ export default function Home() {
           </div>
           <Image
             id="dula"
-            src={"/Surface.jpeg"}
+            src={"/SurFace.jpg"}
             className="object-cover w-full top-0  h-[130%] absolute "
             width={13600}
             height={13690}
@@ -808,7 +808,7 @@ export default function Home() {
             >
               <div className=" md:w-[70%] border border-white/10 rounded-2xl  min-h-full overflow-hidden ">
                 <Image
-                  src={"/Surface.jpeg"}
+                  src={"/SurFace.jpg"}
                   width={2200}
                   height={2000}
                   alt=""
@@ -847,7 +847,7 @@ export default function Home() {
             >
               <div className=" md:w-[70%] border border-white/10 rounded-2xl  overflow-hidden ">
                 <Image
-                  src={"/ciel.avif"}
+                  src={"/ciel.jpg"}
                   width={6000}
                   height={3000}
                   alt="2"
