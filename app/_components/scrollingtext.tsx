@@ -59,8 +59,9 @@ function horizontalLoop(
     repeat: config.repeat,
     paused: config.paused,
     defaults: { ease: "none" },
-    onReverseComplete: () =>
-      tl.totalTime(tl.rawTime() + tl.duration() * 100),
+    onReverseComplete: () => {
+      tl.totalTime(tl.rawTime() + tl.duration() * 100);
+    },
   });
 
   const length = items.length;
