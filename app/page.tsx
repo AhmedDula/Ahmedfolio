@@ -542,8 +542,8 @@ export default function Home() {
             id="dula"
             src={"/SurFace.jpg"}
             className="object-cover w-full top-0  h-[130%] absolute "
-            width={13600}
-            height={13690}
+            width={1920}
+            height={1080}
             alt="hero-img"
           />
         </section>
