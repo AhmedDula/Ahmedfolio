@@ -25,7 +25,7 @@ export default function Home() {
     ScrollToPlugin,
     SplitText,
     Draggable,
-    Observer
+    Observer,
   );
   // UseGSAP
   useGSAP(() => {
@@ -83,7 +83,7 @@ export default function Home() {
           duration: 1,
           scale: 1.01,
         },
-        "<80%"
+        "<80%",
       )
       .from(
         "#Nav",
@@ -92,7 +92,7 @@ export default function Home() {
           duration: 1,
           scale: 1.01,
         },
-        "<"
+        "<",
       );
     gsap.to("#dula", {
       y: "-20%",
@@ -174,7 +174,7 @@ export default function Home() {
         },
         {
           y: 0,
-        }
+        },
       );
       gsap.to("#intro-works", {
         scale: 1.2,
@@ -190,7 +190,7 @@ export default function Home() {
         },
         {
           y: 0,
-        }
+        },
       );
       gsap.to("#intro-works", {
         scale: 0,
@@ -387,7 +387,7 @@ export default function Home() {
       .to(
         "#projects-content",
         { yPercent: -5, scale: 0.8, duration: 10 },
-        "<+=0.5"
+        "<+=0.5",
       );
 
     Observer.create({
@@ -476,7 +476,7 @@ export default function Home() {
         {
           yPercent: -10,
         },
-        "<"
+        "<",
       );
   });
 
@@ -544,12 +544,11 @@ export default function Home() {
             className="object-cover w-full top-0  h-[130%] absolute "
             width={1300}
             height={1080}
-            quality={80}
-            sizes={
-                    "(max-width:768px) 100vw,1300px"
-                  }
+            sizes={"(max-width:768px) 100vw,1200px"}
+            quality={70}
             alt="hero-img"
-            
+            aria-hidden="true"
+            priority
           />
         </section>
         <section
@@ -780,9 +779,8 @@ export default function Home() {
                   src={"/Formula1.jpg"}
                   width={1300}
                   height={1000}
-                  sizes={
-                    "(max-width:768px) 100vw,1300px"
-                  }
+                  sizes={"(max-width:768px) 100vw,1300px"}
+                  quality={70}
                   alt=""
                   className="w-full h-full object-cover"
                 />
@@ -821,9 +819,8 @@ export default function Home() {
                   height={1000}
                   alt=""
                   className="w-full  h-full object-cover"
-                  sizes={
-                    "(max-width:768px) 100vw,1300px"
-                  }
+                  sizes={"(max-width:768px) 100vw,1300px"}
+                  quality={70}
                 />
               </div>
               <div className=" md:w-[30%] border border-white/10 rounded-2xl  min-h-full flex flex-col justify-between p-6">
@@ -861,9 +858,8 @@ export default function Home() {
                   src={"/ciel.jpg"}
                   width={1400}
                   height={1000}
-                  sizes={
-                    "(max-width:768px) 100vw,1300px"
-                  }
+                  sizes={"(max-width:768px) 100vw,1300px"}
+                  quality={70}
                   alt="2"
                   className="w-full min-h-full object-cover"
                 />
@@ -1009,11 +1005,9 @@ export default function Home() {
               id="silver"
               src={"/surFace.png"}
               className="object-cover w-full h-[160%] top-0 absolute -z-1"
-              width={13600}
-              height={13690}
-              sizes={
-                    "(max-width:768px) 100vw,1300px"
-                  }
+              width={1600}
+              height={1690}
+              sizes={"(max-width:768px) 100vw,1300px"}
               alt="hero-img"
             />
           </section>
