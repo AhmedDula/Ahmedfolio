@@ -542,9 +542,10 @@ export default function Home() {
             id="dula"
             src={"/SurFace.jpg"}
             className="object-cover w-full top-0  h-[130%] absolute "
-            width={1920}
+            width={1300}
             height={1080}
             alt="hero-img"
+            
           />
         </section>
         <section
@@ -773,8 +774,8 @@ export default function Home() {
               <div className=" md:w-[70%]  rounded-2xl border border-white/10 min-h-full overflow-hidden">
                 <Image
                   src={"/Formula1.jpg"}
-                  width={2200}
-                  height={2000}
+                  width={1300}
+                  height={1000}
                   alt=""
                   className="w-full h-full object-cover"
                 />
@@ -809,8 +810,8 @@ export default function Home() {
               <div className=" md:w-[70%] border border-white/10 rounded-2xl  min-h-full overflow-hidden ">
                 <Image
                   src={"/SurFace.jpg"}
-                  width={2200}
-                  height={2000}
+                  width={1300}
+                  height={1000}
                   alt=""
                   className="w-full  h-full object-cover"
                 />
@@ -848,8 +849,8 @@ export default function Home() {
               <div className=" md:w-[70%] border border-white/10 rounded-2xl  overflow-hidden ">
                 <Image
                   src={"/ciel.jpg"}
-                  width={6000}
-                  height={3000}
+                  width={1400}
+                  height={1000}
                   alt="2"
                   className="w-full min-h-full object-cover"
                 />
