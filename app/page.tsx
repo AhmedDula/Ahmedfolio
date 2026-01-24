@@ -544,6 +544,10 @@ export default function Home() {
             className="object-cover w-full top-0  h-[130%] absolute "
             width={1300}
             height={1080}
+            quality={80}
+            sizes={
+                    "(max-width:768px) 100vw,1300px"
+                  }
             alt="hero-img"
             
           />
@@ -776,6 +780,9 @@ export default function Home() {
                   src={"/Formula1.jpg"}
                   width={1300}
                   height={1000}
+                  sizes={
+                    "(max-width:768px) 100vw,1300px"
+                  }
                   alt=""
                   className="w-full h-full object-cover"
                 />
@@ -814,6 +821,9 @@ export default function Home() {
                   height={1000}
                   alt=""
                   className="w-full  h-full object-cover"
+                  sizes={
+                    "(max-width:768px) 100vw,1300px"
+                  }
                 />
               </div>
               <div className=" md:w-[30%] border border-white/10 rounded-2xl  min-h-full flex flex-col justify-between p-6">
@@ -851,6 +861,9 @@ export default function Home() {
                   src={"/ciel.jpg"}
                   width={1400}
                   height={1000}
+                  sizes={
+                    "(max-width:768px) 100vw,1300px"
+                  }
                   alt="2"
                   className="w-full min-h-full object-cover"
                 />
@@ -998,6 +1011,9 @@ export default function Home() {
               className="object-cover w-full h-[160%] top-0 absolute -z-1"
               width={13600}
               height={13690}
+              sizes={
+                    "(max-width:768px) 100vw,1300px"
+                  }
               alt="hero-img"
             />
           </section>
