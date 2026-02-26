@@ -540,15 +540,16 @@ export default function Home() {
           </div>
           <Image
             id="dula"
-            src={"/SurFace.jpg"}
+            src={"/SurFace.webp"}
             className="object-cover w-full top-0  h-[130%] absolute "
-            width={1300}
-            height={1080}
-            sizes={"(max-width:768px) 100vw,1200px"}
-            quality={70}
-            alt="hero-img"
-            aria-hidden="true"
+            width={1080}
+            height={670}
+            unoptimized
             priority
+            quality={100}
+            sizes="100vw"
+            alt="Ahmed Portfolio Hero"
+            aria-hidden="true"
           />
         </section>
         <section
@@ -776,11 +777,10 @@ export default function Home() {
             >
               <div className=" md:w-[70%]  rounded-2xl border border-white/10 min-h-full overflow-hidden">
                 <Image
-                  src={"/Formula1.jpg"}
-                  width={1300}
-                  height={1000}
-                  sizes={"(max-width:768px) 100vw,1300px"}
-                  quality={70}
+                  src={"/F1.webp"}
+                  width={1920}
+                  height={1080}
+                  quality={100}
                   alt=""
                   className="w-full h-full object-cover"
                 />
@@ -814,13 +814,14 @@ export default function Home() {
             >
               <div className=" md:w-[70%] border border-white/10 rounded-2xl  min-h-full overflow-hidden ">
                 <Image
-                  src={"/SurFace.jpg"}
-                  width={1300}
-                  height={1000}
+                  src={"/SurFace.webp"}
+                  width={1920}
+                  height={1080}
                   alt=""
                   className="w-full  h-full object-cover"
                   sizes={"(max-width:768px) 100vw,1300px"}
-                  quality={70}
+                  quality={100}
+                  unoptimized
                 />
               </div>
               <div className=" md:w-[30%] border border-white/10 rounded-2xl  min-h-full flex flex-col justify-between p-6">
@@ -1003,11 +1004,11 @@ export default function Home() {
             </div>
             <Image
               id="silver"
-              src={"/surFace.png"}
+              src={"/FT.webp"}
               className="object-cover w-full h-[160%] top-0 absolute -z-1"
-              width={1600}
-              height={1690}
-              sizes={"(max-width:768px) 100vw,1300px"}
+              width={3840}
+              height={2160}
+              quality={100}
               alt="hero-img"
             />
           </section>
