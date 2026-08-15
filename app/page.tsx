@@ -903,7 +903,7 @@ export default function Home() {
           </section>
           <section
             id="footer"
-            className="-z-1 absolute top-0 overflow-hidden w-screen h-screen bg-[#e0e0e0] text-white/90 flex items-center justify-end flex-col "
+            className="-z-1 absolute top-0 overflow-hidden w-screen h-screen bg-[#e0e0e0] text-black/90 flex items-center justify-end flex-col "
           >
             <div className=" w-full flex justify-between  h-50 sm:h-40 px-4 sm:px-8 items-baseline z-12">
               <div className="flex flex-col gap-4">
@@ -967,10 +967,11 @@ export default function Home() {
             </div>
             <Image
               id="silver"
-              src={"/FT.webp"}
-              className="object-cover w-full h-[160%] top-0 absolute -z-1"
-              width={3840}
-              height={2160}
+              src={"/ahmed-Photoroom.png"}
+              className="object-cover sm:object-contain grayscale w-full h-[120%]  top-10 absolute -z-1"
+              width={2000}
+              unoptimized
+              height={1200}
               quality={100}
               alt="hero-img"
             />
