@@ -471,7 +471,7 @@ export default function Home() {
           </div>
           <div
             id="hero-footer"
-            className="w-full flex justify-between h-50 sm:h-40 px-4 sm:px-8 items-baseline z-10"
+            className="w-full flex justify-between h-50 sm:h-40 px-4 sm:px-8 items-baseline z-10 text-black"
           >
             <div id="links" className="flex flex-col justify-between">
               <Link
