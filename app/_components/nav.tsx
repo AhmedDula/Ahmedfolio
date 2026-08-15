@@ -6,7 +6,7 @@ import gsap from "gsap";
 
 function Nav() {
   return (
-    <div className="bg-transparent z-30 h-15 w-full p-5 hidden absolute text-lg sm:flex justify-between text-white/90">
+    <div className="bg-transparent z-30 h-15 w-full p-5 hidden absolute text-lg sm:flex justify-between  text-black">
       <NavLink href="/">
         <MdCopyright /> Ahmed
       </NavLink>

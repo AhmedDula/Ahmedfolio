@@ -36,7 +36,7 @@ export default function NavLink({ href, children }: NavLinkProps) {
     <div
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
-      className="relative inline-block"
+      className="relative inline-block "
     >
       <Link href={href} className="flex justify-baseline items-center">{children}</Link>
 

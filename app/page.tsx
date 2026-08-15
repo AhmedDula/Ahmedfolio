@@ -29,14 +29,7 @@ export default function Home() {
   );
   // UseGSAP
   useGSAP(() => {
-    // Smooth Scroll
-    ScrollSmoother.create({
-      smooth: 1.7,
-      effects: true,
-      ignoreMobileResize: true,
-      // normalizeScroll: true,
-    });
-    ScrollSmoother.refresh();
+
 
     const quickX = gsap.quickTo("#follower", "x", { duration: 0.01 });
     const quickY = gsap.quickTo("#follower", "y", { duration: 0.01 });
@@ -129,38 +122,7 @@ export default function Home() {
         scrub: 1,
       },
     });
-    // const introSp = SplitText.create("#intro-h1", {
-    //   type: "chars",
-    //   smartWrap: true,
-    // });
-    // ScrollTrigger.refresh()
-    // gsap.fromTo(
-    //   introSp.chars,
-    //   {
-    //     autoAlpha: 0.4,
-    //     stagger: {
-    //       each: 0.3,
-    //     },
-    //     scrollTrigger: {
-    //       trigger: "#intro-h1",
-    //       start: "top-=30% center",
-    //       end: "50% center",
-    //       scrub: 1,
-    //     },
-    //   },
-    //   {
-    //     autoAlpha: 1,
-    //     stagger: {
-    //       each: 0.3,
-    //     },
-    //     scrollTrigger: {
-    //       trigger: "#intro-h1",
-    //       start: "top-=30% center",
-    //       end: "50% center",
-    //       scrub: 1,
-    //     },
-    //   }
-    // );
+ 
     const linkSp = SplitText.create("#intro-link", {
       type: "chars",
       mask: "chars",
@@ -406,6 +368,7 @@ export default function Home() {
         });
       },
       onHoverEnd: () => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         span ? (span.textContent = "") : "";
         gsap.to("#follower", {
           scale: 0,
@@ -491,7 +454,7 @@ export default function Home() {
           <FiExternalLink size={6} />
         </span>
       </div>
-      <div id="smooth-content" className=" h-fit text-xl  overflow-hidden">
+      <div id="smooth-content" className=" h-fit text-xl  overflow-hidden ">
         <nav
           id="Nav"
           className="z-32 relative w-screen bg-amber-200 overflow-visible h-fit"
@@ -501,9 +464,9 @@ export default function Home() {
         </nav>
         <section
           id="hero"
-          className="relative overflow-hidden w-screen h-screen bg-[#e0e0e0] text-white/90 flex items-center justify-end flex-col "
+          className="relative isolate overflow-hidden w-screen h-screen bg-[#e0e0e0]  flex items-center justify-end flex-col  "
         >
-          <div id="hero-title" className="absolute top-[33%] left-[0%] z-20">
+          <div id="hero-title" className="absolute top-[33%] left-0 z-20 mix-blend-difference text-white">
             <ScrollingText />
           </div>
           <div
@@ -540,14 +503,14 @@ export default function Home() {
           </div>
           <Image
             id="dula"
-            src={"/SurFace.webp"}
-            className="object-cover w-full top-0  h-[130%] absolute "
-            width={1080}
-            height={670}
+            src={"/ahmed-Photoroom.png"}
+            className="object-cover sm:object-contain w-full top-30 grayscale brightness-90 h-[110%] absolute z-0 block "
+            width={2000}
+            height={2000}
             unoptimized
             priority
             quality={100}
-            sizes="100vw"
+            sizes="80vw"
             alt="Ahmed Portfolio Hero"
             aria-hidden="true"
           />
@@ -758,7 +721,7 @@ export default function Home() {
         </section>
         <section
           id="projects"
-          className="relative h-[520vh] sm:h-[600vh] w-screen  border-b border-white/9 px-4 sm:px-8 py-5 "
+          className="relative h-[520vh] sm:h-[600vh] w-screen  border-b border-white/9 px-4 sm:px-8 py-5  "
         >
           <span
             id="projects-span"
@@ -768,7 +731,7 @@ export default function Home() {
           </span>
           <div
             id="projects-content"
-            className="relative w-full h-screen  overflow-hidden sm:cursor-none  flex flex-col flex-nowrap "
+            className="relative w-full h-screen  overflow-hidden sm:cursor-none  flex flex-col flex-nowrap will-change-transform transform-gpu"
           >
             <Link
               href={"/1"}

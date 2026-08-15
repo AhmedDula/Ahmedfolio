@@ -35,7 +35,7 @@ export default function ScrollingText() {
 
   return (
     <div className="rail flex gap-10 overflow-hidden text-nowrap  h-50 w-screen pointer-events-none">
-     <h1 className="text-[15vw] sm:text-[9vw] font-semibold text-white/90 ">Ahmed Adel -Web Developer</h1>
+     <h1 className="text-[15vw] sm:text-[9vw] font-semibold text-white ">Ahmed Adel -Web Developer</h1>
     </div>
   );
 }
