@@ -36,8 +36,8 @@ function MobileNav() {
   }, [openNav]);
   return (
     <div className="bg-transparent z-30 h-15 w-full p-5 sm:hidden absolute text-lg flex flex-col justify-between text-white/90">
-      <div className="flex">
-        <h1 className="flex items-center-safe w-full text-black">
+      <div className="flex ">
+        <h1 className="flex items-center-safe w-full text-white">
           <span>
             <BiCopyright size={18} />
           </span>{" "}

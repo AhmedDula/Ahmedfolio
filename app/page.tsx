@@ -457,21 +457,21 @@ export default function Home() {
       <div id="smooth-content" className=" h-fit text-xl  overflow-hidden ">
         <nav
           id="Nav"
-          className="z-32 relative w-screen bg-amber-200 overflow-visible h-fit"
+          className="z-50 relative w-screen  overflow-visible h-fit text-white mix-blend-difference"
         >
           <Nav />
           <MobileNav />
         </nav>
         <section
           id="hero"
-          className="relative isolate overflow-hidden w-screen h-screen bg-[#e0e0e0]  flex items-center justify-end flex-col  "
+          className="relative  overflow-hidden w-screen h-screen bg-[#e0e0e0]  flex items-center justify-end flex-col  "
         >
           <div id="hero-title" className="absolute top-[33%] left-0 z-20 mix-blend-difference text-white">
             <ScrollingText />
           </div>
           <div
             id="hero-footer"
-            className="w-full flex justify-between h-50 sm:h-40 px-4 sm:px-8 items-baseline z-10 text-black"
+            className="w-full flex justify-between h-50 sm:h-40 px-4 sm:px-8 items-baseline z-10 text-white mix-blend-difference"
           >
             <div id="links" className="flex flex-col justify-between">
               <Link
@@ -734,16 +734,17 @@ export default function Home() {
             className="relative w-full h-screen  overflow-hidden sm:cursor-none  flex flex-col flex-nowrap will-change-transform transform-gpu"
           >
             <Link
-              href={"/1"}
+              href={"/projects/F1"}
               id="project-1"
               className="project-1 bg-[#121111] absolute p-5 rounded-3xl w-full min-h-full  gap-2 flex flex-col md:flex-row sm:cursor-none"
             >
               <div className=" md:w-[70%]  rounded-2xl border border-white/10 min-h-full overflow-hidden">
                 <Image
-                  src={"/F1.webp"}
+                  src={"https://images.pexels.com/photos/10620483/pexels-photo-10620483.jpeg"}
                   width={1920}
                   height={1080}
-                  quality={100}
+                  quality={75}
+                  unoptimized
                   alt=""
                   className="w-full h-full object-cover"
                 />

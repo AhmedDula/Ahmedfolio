@@ -37,12 +37,13 @@ export default function NavLink({ href, children }: NavLinkProps) {
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
       className="relative inline-block "
+      
     >
-      <Link href={href} className="flex justify-baseline items-center">{children}</Link>
+      <Link href={href} className="flex justify-baseline items-center ">{children}</Link>
 
       <span
         ref={underlineRef}
-        className="absolute -bottom-1.5 left-0 h-px w-full bg-black/90 scale-x-0"
+        className="absolute -bottom-1.5 left-0 h-px w-full  scale-x-0 bg-white mix-blend-difference"
       />
     </div>
   );

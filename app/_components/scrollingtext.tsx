@@ -34,8 +34,8 @@ export default function ScrollingText() {
   }, []);
 
   return (
-    <div className="rail flex gap-10 overflow-hidden text-nowrap  h-50 w-screen pointer-events-none">
-     <h1 className="text-[15vw] sm:text-[9vw] font-semibold text-white ">Ahmed Adel -Web Developer</h1>
+    <div className="rail flex gap-10 overflow-hidden text-nowrap  h-70 w-screen pointer-events-none">
+     <h1 className="text-[15vw] font-semibold text-white ">Ahmed Adel -Web Developer</h1>
     </div>
   );
 }
@@ -72,7 +72,7 @@ function horizontalLoop(
   const xPercents: number[] = [];
   let curIndex = 0;
 
-  const pixelsPerSecond = (config.speed || 1) * 100;
+  const pixelsPerSecond = (config.speed || 1) * 70;
   const snap =
     config.snap === false
       ? (v: number) => v
