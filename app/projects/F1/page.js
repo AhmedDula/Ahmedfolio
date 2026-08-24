@@ -47,7 +47,7 @@ gsap.to("#img_2", {
     start: "top center",
     end: "bottom center",
     scrub: true,
-    markers:true
+    // markers:true
   },
 });
 gsap.to("#img_3", {
