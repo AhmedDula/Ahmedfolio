@@ -10,7 +10,8 @@ import { ScrollTrigger } from "gsap/all";
 function Page() {
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
-    gsap.from(".img", {
+    
+      gsap.from(".img", {
       scrollTrigger: {
         trigger: ".f",
         // markers:true,
@@ -31,12 +32,13 @@ function Page() {
 gsap.to("#img_1", {
   yPercent: 30,
   ease: "none",
+  force3D: true,
   scrollTrigger: {
     trigger: "#wraper_1",
     start: "top center",
     end: "bottom center",
-    scrub: true,
-    // markers:true
+    scrub: .5,
+    invalidateOnRefresh: true,
   },
 });
 gsap.to("#img_2", {
@@ -46,7 +48,7 @@ gsap.to("#img_2", {
     trigger: "#wraper_2",
     start: "top center",
     end: "bottom center",
-    scrub: true,
+    scrub: .5,
     // markers:true
   },
 });
@@ -57,7 +59,7 @@ gsap.to("#img_3", {
     trigger: "#wraper_3",
     start: "top center",
     end: "bottom center",
-    scrub: true,
+    scrub: .5,
     // markers:true
   },
 });
@@ -99,7 +101,8 @@ gsap.to("#img_3", {
         <div id="wraper_1" className="  h-screen   overflow-hidden relative  ">
           <Image
           id="img_1"
-            className=" absolute   -top-100  object-cover w-full h-[170%]"
+  className="absolute -top-100 object-cover w-full h-[170%] will-change-transform"
+ 
             src={
               "https://blanckaeg.com/cdn/shop/files/DSC04495.jpg?v=1779395663&width=2400"
             }
@@ -114,7 +117,7 @@ gsap.to("#img_3", {
         <div id="wraper_2" className="  h-screen   overflow-hidden relative ">
           <Image
             id="img_2"
-            className=" absolute   -top-50  object-cover w-full h-[170%]"
+            className=" absolute -top-50  object-cover w-full h-[170%] will-change-transform"
             src={
               "https://blanckaeg.com/cdn/shop/files/DSC01111.jpg?v=1784789308&width=2400"
             }
@@ -127,7 +130,7 @@ gsap.to("#img_3", {
         <div id="wraper_3" className="  h-screen   overflow-hidden relative ">
           <Image
             id="img_3"
-            className=" absolute   -top-100  object-cover w-full h-[170%]"
+            className=" absolute   -top-100  object-cover w-full h-[170%] will-change-transform"
             src={
               "https://images.pexels.com/photos/10620483/pexels-photo-10620483.jpeg"
             }
