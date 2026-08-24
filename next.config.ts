@@ -6,7 +6,14 @@ const nextConfig: NextConfig = {
       {
 
         protocol:"https",
-        hostname:"images.pexels.com"
+        hostname:"images.pexels.com",
+        
+      },
+      {
+
+        protocol:"https",
+        hostname:"blanckaeg.com",
+        
       }
     ]
   }
