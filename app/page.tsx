@@ -15,6 +15,7 @@ import { BiMailSend, BiPhone } from "react-icons/bi";
 import { CiMail } from "react-icons/ci";
 import { LiaLinkedin } from "react-icons/lia";
 import { BsGithub, BsInstagram } from "react-icons/bs";
+import Lenis from "lenis";
 // import ScrollingText2 from "./_components/scrollingtext2";
 export default function Home() {
   // Plugins
@@ -735,6 +736,7 @@ export default function Home() {
           >
             <Link
               href={"/projects/F1"}
+              
               id="project-1"
               className="project-1 bg-[#121111] absolute p-5 rounded-3xl w-full min-h-full  gap-2 flex flex-col md:flex-row sm:cursor-none"
             >
