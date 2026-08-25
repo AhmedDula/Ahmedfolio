@@ -3,6 +3,20 @@
 :root {
   --background: #121111;
   --foreground: #ffffff;
+
+  --font-hero: clamp(2.5rem, 7vw, 7rem);
+  --font-title: clamp(2rem, 3vw, 4rem);
+  --font-body: clamp(0.95rem, 1.2vw, 1.2rem);
+}
+
+@utility text-hero {
+  font-size: var(--font-hero);
+}
+@utility text-title {
+  font-size: var(--font-title);
+}
+@utility text-body {
+  font-size: var(--font-body);
 }
 
 @theme inline {
@@ -12,10 +26,8 @@
   --font-mono: var(--font-geist-mono);
 }
 
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  
 }

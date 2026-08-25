@@ -328,7 +328,7 @@ export default function Home() {
           pin: true,
           scrub: 1,
           snap: {
-            snapTo: "labelsDirectional", // Snap إلى labels مع اتجاه السكرول
+            snapTo: "labelsDirectional", 
             duration: { min: 0.3, max: 0.8 },
             ease: "power1.inOut",
           },
