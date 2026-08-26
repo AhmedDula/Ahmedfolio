@@ -166,7 +166,7 @@ export default function Home() {
     // Services Animations
     ScrollTrigger.create({
       trigger: "#service-content",
-      end: "",
+      end: "bottom top",
       pin: "#service-span",
       pinSpacing: false,
     });
@@ -412,36 +412,14 @@ export default function Home() {
       },
     });
     // ------Testimonials------
-    gsap.to("#testimonials", {
-      yPercent: -100,
-      ease: "none",
-
-      scrollTrigger: {
-        trigger: "#pin-sc",
-        pin: true,
-        scrub: true,
-        // pinSpacing:false
-      },
-    });
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#pin-sc",
-          scrub: true,
-          // pinSpacing:false
-        },
-      })
-      .from("#footer", {
-        delay: 0.2,
-        autoAlpha: 0.2,
-      })
-      .to(
-        "#silver",
-        {
-          yPercent: -10,
-        },
-        "<",
-      );
+   ScrollTrigger.create({
+    trigger: "#footer",
+    pin: true,
+    start: "bottom bottom",
+    end: "+=100%",
+    // markers:true
+  });
+    
   });
 
   return (
@@ -735,7 +713,7 @@ export default function Home() {
             className="relative w-full h-screen  overflow-hidden sm:cursor-none  flex flex-col flex-nowrap will-change-transform transform-gpu"
           >
             <Link
-              href={"/projects/F1"}
+              href={"/projects/fringe-sports"}
               
               id="project-1"
               className="project-1 bg-[#121111] absolute p-5 rounded-3xl w-full min-h-full  gap-2 flex flex-col md:flex-row sm:cursor-none"
@@ -858,13 +836,10 @@ export default function Home() {
             </Link>
           </div>
         </section>
-        <section
-          id="pin-sc"
-          className="relative h-screen w-screen overflow-hidden"
-        >
+       
           <section
             id="testimonials"
-            className="w-screen h-screen border-b border-white/9 bg-[#121111] px-4 sm:px-8 py-5 z-2"
+            className="w-screen h-screen border-b border-white/9 bg-[#121111] px-4 sm:px-8 py-5 relative z-2"
           >
             <span
               id="testimonials-span"
@@ -906,7 +881,7 @@ export default function Home() {
           </section>
           <section
             id="footer"
-            className="-z-1 absolute top-0 overflow-hidden w-screen h-screen bg-[#e0e0e0] text-white/90 flex items-center justify-end flex-col "
+            className="z-1 relative -mt-[100vh] overflow-hidden w-screen h-screen bg-[#e0e0e0] text-white/90 flex items-center justify-end flex-col "
           >
             <div className=" w-full flex justify-between  h-50 sm:h-40 px-4 sm:px-8 items-baseline z-12  mix-blend-difference">
               <div className="flex flex-col gap-4">
@@ -979,7 +954,7 @@ export default function Home() {
               alt="hero-img"
             />
           </section>
-        </section>
+        
       </div>
     </main>
   );
