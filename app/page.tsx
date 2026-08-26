@@ -486,9 +486,9 @@ export default function Home() {
             className="object-cover sm:object-contain w-full top-30 grayscale brightness-90 h-[110%] absolute z-0 block "
             width={2000}
             height={2000}
-            unoptimized
+            
             priority
-            quality={100}
+            quality={75}
             sizes="80vw"
             alt="Ahmed Portfolio Hero"
             aria-hidden="true"
