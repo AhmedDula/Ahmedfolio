@@ -33,7 +33,8 @@ function Page() {
         pin: true,
         scrub: true,
         start: "bottom bottom",
-        end: "+=100%",
+        end: "bottom top",
+        markers:true
       },
     });
 
