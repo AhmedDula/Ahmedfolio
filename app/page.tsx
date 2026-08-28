@@ -11,11 +11,12 @@ import Link from "next/link";
 import ScrollingText from "./_components/scrollingtext";
 import { FiExternalLink } from "react-icons/fi";
 import MobileNav from "./_components/mobileNav";
-import { BiMailSend, BiPhone } from "react-icons/bi";
+
 import { CiMail } from "react-icons/ci";
 import { LiaLinkedin } from "react-icons/lia";
 import { BsGithub, BsInstagram } from "react-icons/bs";
-import Lenis from "lenis";
+import { BiPhone } from "react-icons/bi";
+
 // import ScrollingText2 from "./_components/scrollingtext2";
 export default function Home() {
   // Plugins
@@ -47,7 +48,7 @@ export default function Home() {
         const title = el.getAttribute("data-title");
         if (span) {
           span.textContent = title;
-          const heroAnim = gsap.to("#follower", {
+           gsap.to("#follower", {
             scale: 1.9,
           });
 
@@ -62,7 +63,7 @@ export default function Home() {
         }
       });
     });
-    const heroTl = gsap
+     gsap
       .timeline()
       .from("#hero-title", {
         autoAlpha: 0,
@@ -320,7 +321,7 @@ export default function Home() {
     gsap.set(".project", {
       yPercent: 100,
     });
-    const tl = gsap
+    gsap
       .timeline({
         scrollTrigger: {
           trigger: "#projects-content",
@@ -412,13 +413,22 @@ export default function Home() {
       },
     });
     // ------Testimonials------
-   ScrollTrigger.create({
-    trigger: "#footer",
-    pin: true,
-    start: "bottom bottom",
-    end: "+=100%",
-    // markers:true
-  });
+  const tl_ft = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#footer",
+        pin: true,
+        scrub: true,
+        start: "bottom bottom",
+        end: "+=100%",
+      },
+    });
+
+    tl_ft.from("#footer", {
+      background: "black",
+    }).from("#footer-img", {
+     scale:1.1,
+     opacity:0
+    },'<');
     
   });
 
@@ -483,11 +493,10 @@ export default function Home() {
           <Image
             id="dula"
             src={"/ahmed-Photoroom.png"}
-            className="object-cover sm:object-contain w-full top-30 grayscale brightness-90 h-[110%] absolute z-0 block "
-            width={2000}
-            height={2000}
-            
-            priority
+            className="object-cover sm:object-contain w-full top-30 grayscale  h-[110%] absolute z-0 block "
+            width={1920}
+            height={1080}
+            loading="eager"
             quality={75}
             sizes="80vw"
             alt="Ahmed Portfolio Hero"
@@ -528,11 +537,7 @@ export default function Home() {
                   to finish.
                 </p>
                 <div
-                  onClick={() =>
-                    gsap.to(window, {
-                      scrollTo: { y: "#projects" },
-                    })
-                  }
+                
                   id="intro-link"
                   className="relative  py-2 w-45 sm:py-4 hover:text-black/90 text-white/60 border border-white/20 text-center rounded-full overflow-hidden"
                 >
@@ -724,7 +729,7 @@ export default function Home() {
                   width={1920}
                   height={1080}
                   quality={75}
-                  unoptimized
+                  
                   alt=""
                   className="w-full h-full object-cover"
                 />
@@ -758,14 +763,14 @@ export default function Home() {
             >
               <div className=" md:w-[70%] border border-white/10 rounded-2xl  min-h-full overflow-hidden ">
                 <Image
-                  src={"/SurFace.webp"}
+                  src={"/ciel.jpg"}
                   width={1920}
                   height={1080}
                   alt=""
                   className="w-full  h-full object-cover"
                   sizes={"(max-width:768px) 100vw,1300px"}
-                  quality={100}
-                  unoptimized
+                  quality={75}
+                  
                 />
               </div>
               <div className=" md:w-[30%] border border-white/10 rounded-2xl  min-h-full flex flex-col justify-between p-6">
@@ -804,7 +809,7 @@ export default function Home() {
                   width={1400}
                   height={1000}
                   sizes={"(max-width:768px) 100vw,1300px"}
-                  quality={70}
+                  quality={75}
                   alt="2"
                   className="w-full min-h-full object-cover"
                 />
@@ -944,14 +949,14 @@ export default function Home() {
               </div>
             </div>
             <Image
-              id="silver"
+              id="footer-img"
               src={"/ahmed-Photoroom.png"}
               className="object-cover sm:object-contain grayscale w-full h-[120%]  top-10 absolute -z-1"
               width={2000}
-              unoptimized
+              
               height={1200}
-              quality={100}
-              alt="hero-img"
+              quality={75}
+              alt="footer-img"
             />
           </section>
         

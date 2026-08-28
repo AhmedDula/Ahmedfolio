@@ -4,7 +4,7 @@
   --background: #121111;
   --foreground: #ffffff;
 
-  --font-hero: clamp(2.5rem, 7vw, 7rem);
+  --font-hero: clamp(2.5rem, 5vw, 7rem);
   --font-title: clamp(2rem, 3vw, 4rem);
   --font-body: clamp(0.95rem, 1.2vw, 1.2rem);
 }

@@ -15,18 +15,6 @@ import { projects } from "../data/projects";
 function Page() {
   gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
-    const slides = gsap.utils.toArray(".slide");
-    gsap.to(slides, {
-      scrollTrigger: {
-        trigger: "#container",
-        start: "top top",
-        pin: true,
-        scrub: .7,
-        // markers: true,
-      },
-      xPercent: -92 * (slides.length - 1),
-    });
-
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#footer",
@@ -57,56 +45,35 @@ function Page() {
         <Nav />
         <MobileNav />
       </nav>
-      <section className="h-60 w-full  py-5">
-        <div className="flex items-end h-full  ">
-          <p className="text-hero font-bold font-mono bg-orange-600 w-full px-5">
-            Work Index
+      <section id="hero-about" className="min-h-screen w-full  ">
+        <div className="w-full mb-20">
+          <p className="text-title md:text-hero font-semibold w-full px-4 sm:px-10 pt-30 sm:pt-60 leading-none whitespace-pre-wrap wrap-break-word ">
+            {"                  "}I’m a designer and art director with
+            over 3 years of experience turning ideas into brands and products. I
+            work closely with founders, marketing teams, and developers to
+            create visual systems that scale — from brand strategy to
+            launch-ready interfaces.
           </p>
         </div>
-      </section>
-      <section id="HR" className="w-full overflow-hidden">
-        <div id="container" className="flex w-fit h-screen">
-          {projects.map((p,i)=>(
-            
-          <Link href={`/projects/${p.slug}`} key={i} className={`slide h-screen w-[80vw] p-5 rounded-3xl gap-2 flex flex-col md:flex-row will-change-transform`} >
-         
-                     
-                       
-                          <div className=" md:w-[70%]  rounded-2xl border border-white/10 h-full overflow-hidden">
-                            <Image
-                              src={p.coverImage}
-                              width={1920}
-                              height={1080}
-                              quality={75}
-                              loading="eager"
-                              alt={p.title}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          <div className=" md:w-[30%]  rounded-2xl border border-white/10 h-full flex flex-col justify-between p-6">
-                            <div className="flex flex-col gap-5">
-                              <span>( 2030 )</span>
-                              <h2 className="text-3xl font-bold">{p.title} </h2>
-                              <p className="text-sm">
-                               {p.overview}
-                              </p>
-                            </div>
-                            <div>
-                              <h3 className=" py-2 border-b border-white/20">
-                                Landing Page
-                              </h3>
-                              <h3 className=" py-2 border-b border-white/20">Responsive</h3>
-                              <h3 className=" py-2 border-b border-white/20">Motions</h3>
-                            </div>
-                          </div>
-                    
-                    
-                      </Link>
-          
-          ))}
-        
+        <div className="flex flex-col sm:flex-row  justify-around items-end w-full text-white/50 mb-40 gap-5 px-4 sm:px-10">
+          <p className="text-body w-100 h-60">
+            I got my start in 2018, freelancing for early-stage startups while
+            finishing design school. My first big break came working with Dapper
+            Labs during the early Web3 wave — helping shape the look and feel of
+            their product launches. Since then, I’ve collaborated with teams at
+            Polygon, Showtime, and smaller venture-backed startups across LA,
+            London, and Tel Aviv.
+          </p>
+          <p className="text-body w-100 h-60">
+            Most of my work sits at the intersection of branding and product.
+            Whether it’s designing pitch decks that raise funding or interfaces
+            that ship, I partner closely with founders and developers to bring
+            bold ideas to life — fast and with intention.
+          </p>
+          <Link href='/contacts' className="w-40 h-12 p-4 rounded-2xl border text-center hover:text-orange-600"> Lets Talk</Link>
         </div>
       </section>
+
       <section
         id="testimonials"
         className="w-full h-full border-b border-white/9 bg-[#121111] px-4 sm:px-8 py-5 z-5 relative"

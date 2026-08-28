@@ -54,28 +54,23 @@ function MobileNav() {
         <div className="flex justify-between">
           <h1 className="flex items-center-safe">
             <span>
-              <BiCopyright size={18} />
+             
             </span>{" "}
-            Ahmed
+            <NavLink href={"/"}> <BiCopyright size={18} />Ahmed</NavLink>
           </h1>{" "}
           <button className="" onClick={() => setOpenNav(!openNav)}>
             <AiOutlineClose size={20} />
           </button>
         </div>
-        <div className="linkNav " onClick={()=>gsap.to(window,{
-            scrollTo:{y:'#projects'}
-        })}>
-          <NavLink href={"/"}>Projects</NavLink>
+        <div className="linkNav " >
+          <NavLink href={"/projects"}>Projects</NavLink>
         </div>
-        <div className="linkNav " onClick={()=>gsap.to(window,{
-            scrollTo:{y:'#intro'}
-        })}>
-          <NavLink href={"/"}>About</NavLink>
+        <div className="linkNav " 
+        >
+          <NavLink href={"/about"}>About</NavLink>
         </div>
-        <div className="linkNav " onClick={()=>gsap.to(window,{
-            scrollTo:{y:'max'}
-        })}>
-          <NavLink href={"/"}>Contacts</NavLink>
+        <div className="linkNav " >
+          <NavLink href={"/contacts"}>Contacts</NavLink>
         </div>
       </div>
     </div>

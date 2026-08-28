@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react"; import { usePathname } from "next/navigation"; import Lenis from "lenis"; import gsap from "gsap"; import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default function SmoothScroll() { const lenisRef = useRef<Lenis | null>(null); const pathname = usePathname();
-useEffect(() => { const lenis = new Lenis({ autoRaf: false, duration: 1.5, smoothWheel: true,syncTouchLerp:1  });
+useEffect(() => { const lenis = new Lenis({ autoRaf: false, duration: 1.7, smoothWheel: true,syncTouchLerp:1  });
 lenisRef.current = lenis;
 
 lenis.on("scroll", ScrollTrigger.update);

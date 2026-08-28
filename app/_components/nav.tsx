@@ -1,8 +1,8 @@
 "use client";
-import React from "react";
+
 import NavLink from "./links";
 import { MdCopyright } from "react-icons/md";
-import gsap from "gsap";
+// import gsap from "gsap";
 
 function Nav() {
   return (
@@ -10,23 +10,15 @@ function Nav() {
       <NavLink href="/">
         <MdCopyright /> Ahmed
       </NavLink>
-      <div onClick={()=>gsap.to(window,{
-            scrollTo:{y:'#projects'}
-        })}>
-        {" "}
-        <NavLink href="#Projects">Projects</NavLink>
-      </div>
-      <div onClick={()=>gsap.to(window,{
-            scrollTo:{y:'#intro'}
-        })}>
-        <NavLink href="#About">About</NavLink>
-      </div>
-      <div onClick={()=>gsap.to(window,{
-            scrollTo:{y:'max'}
-        })}>
-        {" "}
-        <NavLink href="#Contacts">Contacts</NavLink>
-      </div>
+      
+        <NavLink href="/projects">Projects</NavLink>
+      
+      
+        <NavLink href="/about">About</NavLink>
+      
+      
+        <NavLink href="/contacts">Contacts</NavLink>
+      
     </div>
   );
 }
