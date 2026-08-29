@@ -33,8 +33,8 @@ function Page() {
         pin: true,
         scrub: true,
         start: "bottom bottom",
-        end: "bottom top",
-        markers:true
+        end: "+=100%",
+        // markers:true
       },
     });
 
@@ -202,8 +202,10 @@ function Page() {
           id="footer-img"
           src={"/ahmed-Photoroom.png"}
           className="object-cover sm:object-contain grayscale w-full h-[120%] top-10 absolute -z-1"
-          width={2000}
-          height={1200}
+          width={1920}
+          placeholder="blur"
+          blurDataURL="/ahmed-Photoroom.png"
+          height={1080}
           quality={75}
           alt="footer-img"
         />

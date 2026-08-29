@@ -82,6 +82,7 @@ import { usePathname } from "next/navigation";
             src={project.coverImage}
             width={1920}
             height={1080}
+            loading="eager"
             quality={75}
             alt={project.title}
             className="img w-full h-full object-cover opacity-0"
@@ -109,6 +110,7 @@ import { usePathname } from "next/navigation";
               src={src}
               width={1920}
               height={1080}
+              loading="eager"
               quality={75}
               alt={`${project.title} ${i + 1}`}
             />
@@ -137,6 +139,7 @@ import { usePathname } from "next/navigation";
                   width={1920}
                   height={1080}
                   quality={75}
+                  loading="eager"
                   alt={mp.title}
                   className="w-full h-full object-cover"
                 />
@@ -215,6 +218,8 @@ import { usePathname } from "next/navigation";
           className="object-cover sm:object-contain grayscale w-full h-[120%] top-10 absolute -z-1"
           width={2000}
           height={1200}
+          placeholder="blur"
+          blurDataURL="/ahmed-Photoroom.png"
           quality={75}
           alt="footer-img"
         />
