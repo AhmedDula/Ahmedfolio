@@ -413,27 +413,12 @@ export default function Home() {
       },
     });
     // ------Testimonials------
-  const tl_ft = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#footer",
-        pin: true,
-        scrub: true,
-        start: "bottom bottom",
-        end: "+=100%",
-      },
-    });
 
-    tl_ft.from("#footer", {
-      background: "black",
-    }).from("#footer-img", {
-     scale:1.1,
-     opacity:0
-    },'<');
     
   });
 
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden bg-background relative z-2">
       <div
         id="follower"
         className="min-w-3 min-h-3 py-1 px-2 invisible sm:visible scale-0 fixed rounded-2xl grid place-items-center pointer-events-none z-50 bg-red-500/90"
@@ -443,7 +428,7 @@ export default function Home() {
           <FiExternalLink size={6} />
         </span>
       </div>
-      <div id="smooth-content" className=" h-fit text-xl  overflow-hidden ">
+      
         <nav
           id="Nav"
           className="z-50 relative w-screen  overflow-visible h-fit text-white mix-blend-difference"
@@ -505,7 +490,7 @@ export default function Home() {
         </section>
         <section
           id="intro"
-          className=" sm:px-8 px-4 py-5 sm:py-2 w-screen h-[90vh] border-b border-white/9"
+          className=" sm:px-8 px-4 py-5 sm:py-2 w-screen h-[90vh] border-b border-white/9 "
         >
           <div
             id="intro-content"
@@ -884,83 +869,9 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <section
-            id="footer"
-            className="z-1 relative -mt-[100vh] overflow-hidden w-screen h-screen bg-[#e0e0e0] text-white/90 flex items-center justify-end flex-col "
-          >
-            <div className=" w-full flex justify-between  h-50 sm:h-40 px-4 sm:px-8 items-baseline z-12  mix-blend-difference">
-              <div className="flex flex-col gap-4">
-                <div className="flex flex-col cursor-none gap-2">
-                  <a
-                    href="mailto:ahmedadeldiv@gmail.com"
-                    data-title="Mail"
-                    className="link cursor-none"
-                  >
-                    <span className="hidden sm:block">
-                      Mail: ahmedadeldiv@gmai.com
-                    </span>
-                    <CiMail size={25} className="sm:hidden" />
-                  </a>
-                  <a
-                    href="tel:+201090324648"
-                    data-title="Phone"
-                    className="link cursor-none"
-                  >
-                    <span className="hidden sm:block">
-                      Phone: +201090324648
-                    </span>
-                    <BiPhone size={25} className="sm:hidden" />
-                  </a>
-                </div>
-                <div id="links-footer" className="flex gap-5 justify-between">
-                  <Link
-                    href={"https://www.linkedin.com/in/ahmed-adel-said/"}
-                    data-title="Linkedin"
-                    className="link hover:cursor-none"
-                  >
-                    <span className="hidden sm:block">LinkedIn</span>
-                    <LiaLinkedin size={30} className="sm:hidden" />
-                  </Link>
-                  <Link
-                    href={"https://github.com/AhmedDula"}
-                    data-title="GitHub"
-                    className="link hover:cursor-none"
-                  >
-                    <span className="hidden sm:block">GitHub</span>
-                    <BsGithub size={25} className="sm:hidden" />
-                  </Link>
-                  <Link
-                    href={"https://www.instagram.com/jr.ahmd/"}
-                    data-title="Instagram"
-                    className="link hover:cursor-none"
-                  >
-                    <span className="hidden sm:block">Instagram</span>
-                    <BsInstagram size={25} className="sm:hidden" />
-                  </Link>
-                </div>
-              </div>
-              <div className="">
-                <h1 className="font-semibold sm:text-6xl">
-                  {"// Web Developer"}
-                </h1>
-                <h1 className="font-semibold sm:text-6xl pl-4 sm:pl-12">
-                  Art Designer
-                </h1>
-              </div>
-            </div>
-            <Image
-              id="footer-img"
-              src={"/ahmed-Photoroom.png"}
-              className="object-cover sm:object-contain grayscale w-full h-[120%]  top-10 absolute -z-1"
-              width={2000}
-              
-              height={1200}
-              quality={75}
-              alt="footer-img"
-            />
-          </section>
+      
         
-      </div>
+      
     </main>
   );
 }

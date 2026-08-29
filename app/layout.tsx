@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css";
-
+import RevealFooter from './_components/RevealFooter'
 import SmoothScroll from "./_components/Lenis";
 
 const geistSans = Geist({
@@ -69,11 +69,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  relative bg-background`}
       >
-        {/* <SmoothScroll/> */}
+        <SmoothScroll/>
         <SpeedInsights/>
+        
         {children}
+        <RevealFooter/>
+
+        
+        
+        <div id="spacer" className="h-screen -z-11 relative" aria-hidden="true"></div>
       </body>
     </html>
   );
