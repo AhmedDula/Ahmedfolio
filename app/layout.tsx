@@ -69,16 +69,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  relative bg-background`}
+     
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  `}
       >
         <SmoothScroll/>
         <SpeedInsights/>
-        
+
         {children}
         <RevealFooter/>
-
-        
-        
         <div id="spacer" className="h-screen -z-11 relative" aria-hidden="true"></div>
       </body>
     </html>

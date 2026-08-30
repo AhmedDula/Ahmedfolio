@@ -8,30 +8,46 @@ import { CiMail } from "react-icons/ci";
 import { LiaLinkedin } from "react-icons/lia";
 import { BsGithub, BsInstagram } from "react-icons/bs";
 import { BiPhone } from "react-icons/bi";
+import { usePathname } from "next/navigation";
+import { ScrollTrigger } from "gsap/all";
 
 export default function RevealFooter() {
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#spacer",
-        scrub: true,
-        start: "top bottom",
-        end: "+=100%",
-      },
-    });
+  const pathName = usePathname();
+  useGSAP(
+    () => {
+      if (pathName === "/projects") return;
+      gsap.registerPlugin(ScrollTrigger);
 
-    tl.from("#footer", {
-      autoAlpha: 0,
-      background: "black",
-    }).from(
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#spacer",
+          scrub: true,
+          start: "top bottom",
+          end: "+=100%",
+          invalidateOnRefresh: true,
+          // markers: true,
+        },
+      });
+
+      tl.to("#footer", {
+        autoAlpha: 1,
+      }).from(
       "#footer-img",
       {
         scale: 1.1,
         opacity: 0,
       },
       "<",
-    );
-  });
+    ).from(
+        "#footer",
+        {
+          backgroundColor: "black",
+        },
+        "<",
+      );;
+    },
+    { dependencies: [pathName], revertOnUpdate: true },
+  );
   return (
     <footer
       id="footer"

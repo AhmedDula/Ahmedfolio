@@ -5,27 +5,58 @@ import Nav from "./../_components/nav";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/all";
+
 import Link from "next/link";
 import { projects } from "../data/projects";
+import { ScrollTrigger } from "gsap/all";
+
 function Page() {
-  gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
     const slides = gsap.utils.toArray(".slide");
     gsap.to(slides, {
       scrollTrigger: {
         trigger: "#container",
         start: "top top",
-        end: () =>
-          "+=" +
-          (document.querySelector("#container").scrollWidth -
-            window.innerWidth),
+        end: "bottom+=1000 top",
         pin: true,
-        scrub: 0.7,
+        scrub: 1,
+      },
+
+      
+      xPercent: -100 * (slides.length - 1),
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#spacer",
+        scrub: true,
+        start: "top bottom",
+        end: "+=100%",
+        invalidateOnRefresh: true,
         // markers: true,
       },
-      xPercent: -92 * (slides.length - 1),
     });
+
+    tl.to("#footer", {
+      autoAlpha: 1,
+    })
+      .from(
+        "#footer-img",
+        {
+          scale: 1.2,
+          opacity: 0,
+        },
+        "<",
+      )
+      .from(
+        "#footer",
+        {
+          backgroundColor: "black",
+        },
+        "<",
+      );
   });
   return (
     <main className="overflow-hidden bg-background relative z-2">
@@ -43,13 +74,13 @@ function Page() {
           </p>
         </div>
       </section>
-      <section id="HR" className="w-full overflow-hidden">
+      <section id="HR" className="w-full overflow-hidden h-fit ">
         <div id="container" className="flex w-fit h-screen">
           {projects.map((p, i) => (
             <Link
               href={`/projects/${p.slug}`}
               key={i}
-              className={`slide h-screen w-[80vw] p-5 rounded-3xl gap-2 flex flex-col md:flex-row will-change-transform`}
+              className={`slide h-screen w-screen p-5 rounded-3xl gap-2 flex flex-col md:flex-row will-change-transform`}
             >
               <div className=" md:w-[70%]  rounded-2xl border border-white/10 h-full overflow-hidden">
                 <Image
