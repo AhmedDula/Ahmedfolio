@@ -48,36 +48,7 @@ function Page() {
         </div>
       </section>
 
-      <section
-        id="testimonials"
-        className="w-full h-full border-b border-white/9 bg-[#121111] px-4 sm:px-8 py-5 z-5 relative"
-      >
-        <span
-          id="testimonials-span"
-          className="text-orange-700 absolute w-fit h-fit z-9001"
-        >
-          {"// More Projects"}
-        </span>
-        <div className="w-full min-h-screen flex flex-wrap md:flex-nowrap gap-6 ">
-          <div className="flex flex-col gap-3">
-            <div className="w-full h-[90%] border border-white/20 rounded-2xl overflow-hidden">
-              <Image
-                src="/ciel.jpg"
-                width={1920}
-                height={1080}
-                quality={75}
-                loading="eager"
-                alt="ahmed"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="w-full h-[20%] border border-white/20 rounded-2xl px-5 py-10 sm:py-2 flex flex-col justify-center">
-              <p className="text-body sm:text-title font-bold"></p>
-              <p className="text-body"></p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     
     </main>
   );

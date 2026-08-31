@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
-import RevealFooter from './_components/RevealFooter'
+import RevealFooter from "./_components/RevealFooter";
 import SmoothScroll from "./_components/Lenis";
 
 const geistSans = Geist({
@@ -15,10 +15,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const viewport: Viewport ={
-  
-  themeColor:'#ff5a1f',
-}
+export const viewport: Viewport = {
+  themeColor: "#ff5a1f",
+};
 
 export const metadata: Metadata = {
   title: "Ahmed Adel | Full-Stack Developer & Designer",
@@ -69,15 +68,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-     
         className={`${geistSans.variable} ${geistMono.variable} antialiased  `}
       >
-        <SmoothScroll/>
-        <SpeedInsights/>
+        <SmoothScroll />
+        <SpeedInsights />
 
         {children}
-        <RevealFooter/>
-        <div id="spacer" className="h-screen -z-11 relative" aria-hidden="true"></div>
+        <RevealFooter />
       </body>
     </html>
   );

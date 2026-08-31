@@ -21,7 +21,7 @@ export const projects = [
     overview:
       "Urban Roast wanted to shed its 'just another coffee shop' image. We leaned into the ritual and community of coffee culture, building a campaign around the small, unspoken moments that happen over a cup — first dates, quiet mornings, and chance reunions.",
     coverImage:
-      "https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg",
+      "https://images.pexels.com/photos/302894/pexels-photo-302894.jpeg",
     galleryImages: [
       "https://images.pexels.com/photos/302896/pexels-photo-302896.jpeg",
       "https://images.pexels.com/photos/302894/pexels-photo-302894.jpeg",

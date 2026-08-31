@@ -6,7 +6,7 @@ import { MdCopyright } from "react-icons/md";
 
 function Nav() {
   return (
-    <div className="bg-transparent z-30 h-15 w-full p-5 hidden absolute text-lg sm:flex justify-between  ">
+    <div className="bg-transparent z-30 h-15 w-full p-5 hidden absolute text-lg sm:flex justify-around  ">
       <NavLink href="/">
         <MdCopyright /> Ahmed
       </NavLink>

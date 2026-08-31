@@ -15,7 +15,7 @@ export default function RevealFooter() {
   const pathName = usePathname();
   useGSAP(
     () => {
-      if (pathName === "/projects") return;
+      if (pathName === "/projects" || pathName ===  "/contacts" ) return;
       gsap.registerPlugin(ScrollTrigger);
 
       const tl = gsap.timeline({
@@ -48,7 +48,11 @@ export default function RevealFooter() {
     },
     { dependencies: [pathName], revertOnUpdate: true },
   );
+  if(pathName === "/contacts") return null
+
   return (
+
+    <>
     <footer
       id="footer"
       className="fixed bottom-0 left-0 invisible z-1 w-full h-screen overflow-hidden bg-[#e0e0e0] text-white/90 flex items-center justify-end flex-col"
@@ -129,5 +133,12 @@ export default function RevealFooter() {
         alt="footer-img"
       />
     </footer>
+    
+       
+    <div id="spacer" className="h-screen -z-11 relative" aria-hidden="true"></div>
+  
+</>
+     
   );
+  
 }

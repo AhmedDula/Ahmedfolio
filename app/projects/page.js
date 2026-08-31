@@ -5,15 +5,25 @@ import Nav from "./../_components/nav";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-
+import { SplitText } from "gsap/all";
 import Link from "next/link";
 import { projects } from "../data/projects";
 import { ScrollTrigger } from "gsap/all";
 
 function Page() {
   useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
+    gsap.registerPlugin(ScrollTrigger,SplitText);
+    const work_sp =  SplitText.create("#work-index",{type:"chars"})
+    gsap.from(work_sp.chars,{
+      autoAlpha:0,
+      y:100,
+      duration:1.2,
+     stagger:{
+        each:.05,
+        ease:"elastic",
+        
+      }
+    })
     const slides = gsap.utils.toArray(".slide");
     gsap.to(slides, {
       scrollTrigger: {
@@ -69,7 +79,7 @@ function Page() {
       </nav>
       <section className="h-60 w-full  py-5">
         <div className="flex items-end h-full  ">
-          <p className="text-hero font-bold font-mono bg-orange-600 w-full px-5">
+          <p id="work-index" className="text-hero font-bold font-mono bg-orange-600 w-full px-5">
             Work Index
           </p>
         </div>
@@ -112,36 +122,7 @@ function Page() {
         </div>
       </section>
 
-      <section
-        id="testimonials"
-        className="w-full h-fit border-b border-white/9 bg-[#121111] px-4 sm:px-8 py-5 z-1 relative overflow-hidden"
-      >
-        <span
-          id="testimonials-span"
-          className="text-orange-700 absolute w-fit h-fit z-9001"
-        >
-          {"// More Projects"}
-        </span>
-        <div className="w-full min-h-screen flex flex-wrap md:flex-nowrap gap-6 ">
-          <div className="flex flex-col gap-3">
-            <div className="w-full h-[90%] border border-white/20 rounded-2xl overflow-hidden">
-              <Image
-                src="/ciel.jpg"
-                width={1920}
-                height={1080}
-                quality={75}
-                loading="eager"
-                alt="ahmed"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="w-full h-[20%] border border-white/20 rounded-2xl px-5 py-10 sm:py-2 flex flex-col justify-center">
-              <p className="text-body sm:text-title font-bold"></p>
-              <p className="text-body"></p>
-            </div>
-          </div>
-        </div>
-      </section>
+     
     </main>
   );
 }

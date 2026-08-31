@@ -12,12 +12,7 @@ import ScrollingText from "./_components/scrollingtext";
 import { FiExternalLink } from "react-icons/fi";
 import MobileNav from "./_components/mobileNav";
 
-import { CiMail } from "react-icons/ci";
-import { LiaLinkedin } from "react-icons/lia";
-import { BsGithub, BsInstagram } from "react-icons/bs";
-import { BiPhone } from "react-icons/bi";
 
-// import ScrollingText2 from "./_components/scrollingtext2";
 export default function Home() {
   // Plugins
   gsap.registerPlugin(
