@@ -70,13 +70,7 @@ function Page() {
   });
   return (
     <main className="overflow-hidden bg-background relative z-2">
-      <nav
-        id="Nav"
-        className="z-300 relative w-full  overflow-visible h-16 text-white mix-blend-difference "
-      >
-        <Nav />
-        <MobileNav />
-      </nav>
+     
       <section className="h-60 w-full  py-5">
         <div className="flex items-end h-full  ">
           <p id="work-index" className="text-hero font-bold font-mono bg-orange-600 w-full px-5">

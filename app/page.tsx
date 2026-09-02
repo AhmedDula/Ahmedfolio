@@ -6,11 +6,12 @@ import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import Image from "next/image";
-import Nav from "./_components/nav";
+
 import Link from "next/link";
 import ScrollingText from "./_components/scrollingtext";
-import { FiExternalLink } from "react-icons/fi";
-import MobileNav from "./_components/mobileNav";
+import ProjectsStack from './_components/stacking-projects'
+import { projects } from "./data/projects";
+import ServiceSection from "./_components/ServiceSection"
 
 
 export default function Home() {
@@ -26,39 +27,7 @@ export default function Home() {
   );
   // UseGSAP
   useGSAP(() => {
-
-
-    const quickX = gsap.quickTo("#follower", "x", { duration: 0.01 });
-    const quickY = gsap.quickTo("#follower", "y", { duration: 0.01 });
-    window.addEventListener("mousemove", (e) => {
-      quickX(e.clientX);
-      quickY(e.clientY);
-    });
-    const span = document.querySelector("#follower-h1");
-    const links = document.querySelectorAll(".link");
-
-    // Hero Animations
-    links.forEach((el) => {
-      el.addEventListener("mouseenter", () => {
-        const title = el.getAttribute("data-title");
-        if (span) {
-          span.textContent = title;
-           gsap.to("#follower", {
-            scale: 1.9,
-          });
-
-          el.addEventListener("mouseleave", () => {
-            gsap.to("#follower", {
-              scale: 0,
-              ease: "power2.inOut",
-              duration: 0.5,
-            });
-            span.textContent = "";
-          });
-        }
-      });
-    });
-     gsap
+    gsap
       .timeline()
       .from("#hero-title", {
         autoAlpha: 0,
@@ -92,11 +61,7 @@ export default function Home() {
     // -------Hero-------
 
     // iNTRO Animations
-    ScrollTrigger.create({
-      trigger: "#intro-content",
-      pin: "#intro-span",
-      pinSpacing: false,
-    });
+   
     const introSp = SplitText.create("#intro-h1", {
       type: "chars",
       smartWrap: true,
@@ -119,264 +84,15 @@ export default function Home() {
         scrub: 1,
       },
     });
- 
-    const linkSp = SplitText.create("#intro-link", {
-      type: "chars",
-      mask: "chars",
-    });
-    const introLn = document.getElementById("intro-link");
-    introLn?.addEventListener("mouseenter", () => {
-      gsap.fromTo(
-        linkSp.chars,
-        {
-          y: 15,
-        },
-        {
-          y: 0,
-        },
-      );
-      gsap.to("#intro-works", {
-        scale: 1.2,
-        duration: 0.4,
-        transformOrigin: "bottom",
-      });
-    });
-    introLn?.addEventListener("mouseleave", () => {
-      gsap.fromTo(
-        linkSp.chars,
-        {
-          y: 15,
-        },
-        {
-          y: 0,
-        },
-      );
-      gsap.to("#intro-works", {
-        scale: 0,
-        duration: 0.4,
-        transformOrigin: "bottom",
-      });
-    });
+
     // -------Intro------
 
     // Services Animations
-    ScrollTrigger.create({
-      trigger: "#service-content",
-      end: "bottom top",
-      pin: "#service-span",
-      pinSpacing: false,
-    });
-    ScrollTrigger.create({
-      trigger: "#service-1",
-      start: "top top",
-      end: "bottom top",
-      pin: "#span-01",
-      pinSpacing: false,
-      onLeave: () => {
-        gsap.to("#span-01", {
-          scaleX: 0,
-          autoAlpha: 0,
-          rotationY: 180,
-          duration: 0.5,
-        });
-      },
-      onEnterBack: () => {
-        gsap.to("#span-01", {
-          scaleX: 1,
-          autoAlpha: 1,
-          rotationY: 0,
-          duration: 0.5,
-        });
-      },
-    });
 
-    // Service 2
-    ScrollTrigger.create({
-      trigger: "#service-2",
-      start: "top top",
-      end: "bottom top",
-      pin: "#span-02",
-      pinSpacing: false,
-      onEnter: () => {
-        gsap.to("#span-02", {
-          scaleX: 1,
-          autoAlpha: 1,
-          rotationY: 0,
-          duration: 0.5,
-        });
-        gsap.to("#span-01", {
-          scaleX: 0,
-          autoAlpha: 0,
-          rotationY: 180,
-          duration: 0.5,
-        });
-      },
-      onLeave: () => {
-        gsap.to("#span-02", {
-          scaleX: 0,
-          autoAlpha: 0,
-          rotationY: 180,
-          duration: 0.5,
-        });
-      },
-      onEnterBack: () => {
-        gsap.to("#span-02", {
-          scaleX: 1,
-          autoAlpha: 1,
-          rotationY: 0,
-          duration: 0.5,
-        });
-        gsap.to("#span-01", {
-          scaleX: 0,
-          autoAlpha: 0,
-          rotationY: 180,
-          duration: 0.5,
-        });
-      },
-      onLeaveBack: () => {
-        gsap.to("#span-02", {
-          scaleX: 0,
-          autoAlpha: 0,
-          rotationY: 180,
-          duration: 0.5,
-        });
-        gsap.to("#span-01", {
-          scaleX: 1,
-          autoAlpha: 1,
-          rotationY: 0,
-          duration: 0.5,
-        });
-      },
-    });
-
-    // Service 3
-    ScrollTrigger.create({
-      trigger: "#service-3",
-      start: "top top",
-      end: "67% top",
-      pin: "#span-03",
-      pinSpacing: false,
-      onEnter: () => {
-        gsap.to("#span-03", {
-          scaleX: 1,
-          autoAlpha: 1,
-          rotationY: 0,
-          duration: 0.5,
-        });
-        gsap.to("#span-02", {
-          scaleX: 0,
-          autoAlpha: 0,
-          rotationY: 180,
-          duration: 0.5,
-        });
-      },
-      onEnterBack: () => {
-        gsap.to("#span-03", {
-          scaleX: 1,
-          autoAlpha: 1,
-          rotationY: 0,
-          duration: 0.5,
-        });
-        gsap.to("#span-02", {
-          scaleX: 0,
-          autoAlpha: 0,
-          rotationY: 180,
-          duration: 0.5,
-        });
-      },
-      onLeaveBack: () => {
-        gsap.to("#span-03", {
-          scaleX: 0,
-          autoAlpha: 0,
-          rotationY: 180,
-          duration: 0.5,
-        });
-        gsap.to("#span-02", {
-          scaleX: 1,
-          autoAlpha: 1,
-          rotationY: 0,
-          duration: 0.5,
-        });
-      },
-    });
     // ------Services-------
 
     // projects Animation
-    ScrollTrigger.create({
-      trigger: "#projects",
-      end: "bottom-=2%",
-      pin: "#projects-span",
-      pinSpacing: false,
-      // markers:true
-    });
 
-    gsap.set(".project-1", {
-      yPercent: 10,
-    });
-    gsap.set(".project", {
-      yPercent: 100,
-    });
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#projects-content",
-          end: "+=500%",
-          pin: true,
-          scrub: 1,
-          snap: {
-            snapTo: "labelsDirectional", 
-            duration: { min: 0.3, max: 0.8 },
-            ease: "power1.inOut",
-          },
-          pinSpacing: false,
-        },
-      })
-      .addLabel("project1-start")
-      .to("#project-1", { yPercent: 0, duration: 0.5 })
-      .addLabel("project1-complete")
-      .to("#project-1", { autoAlpha: 0, scale: 0.9, duration: 10 }, "+=1")
-      .addLabel("project2-start")
-      .to("#project-2", { yPercent: 0, duration: 10 }, "<")
-      .addLabel("project2-complete")
-      .to("#project-2", { autoAlpha: 0, scale: 0.9, duration: 10 }, "+=1")
-      .addLabel("project3-start")
-      .to("#project-3", { yPercent: 0, duration: 10 }, "<")
-      .addLabel("project3-complete")
-      .to("#project-3", { autoAlpha: 0.9, scale: 0.9, duration: 10 })
-      .to(
-        "#projects-content",
-        { yPercent: -5, scale: 0.8, duration: 10 },
-        "<+=0.5",
-      );
-
-    Observer.create({
-      target: "#projects-content",
-      onHover: () => {
-        if (span) {
-          span.textContent = "view";
-        }
-        gsap.to("#follower", {
-          scale: 2.9,
-          duration: 0.2,
-          height: 25,
-          width: 27,
-          borderRadius: "100%",
-          padding: "3px",
-        });
-      },
-      onHoverEnd: () => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-        span ? (span.textContent = "") : "";
-        gsap.to("#follower", {
-          scale: 0,
-          duration: 0.2,
-          height: "fit-content",
-          width: "fit-content",
-          borderRadius: "16px",
-          padding: "4px 8px 4px 8px",
-        });
-      },
-    });
     // ------Projects------
 
     // Testimonials Animations
@@ -408,465 +124,158 @@ export default function Home() {
       },
     });
     // ------Testimonials------
-
-    
   });
 
   return (
-    <main className="overflow-hidden bg-background relative z-2">
-      <div
-        id="follower"
-        className="min-w-3 min-h-3 py-1 px-2 invisible sm:visible scale-0 fixed rounded-2xl grid place-items-center pointer-events-none z-50 bg-red-500/90"
+    <main className=" overflow-x-clip bg-background relative z-2 ">
+     
+      <section
+        id="hero"
+        className="relative  overflow-hidden w-screen h-screen bg-[#e0e0e0]  flex items-center justify-end flex-col  "
       >
-        <span className="flex justify-between gap-0.5 items-center">
-          <p id="follower-h1" className="text-[7px] font-semibold"></p>
-          <FiExternalLink size={6} />
-        </span>
-      </div>
-      
-        <nav
-          id="Nav"
-          className="z-50 relative w-screen  overflow-visible h-fit text-white mix-blend-difference"
+        <div
+          id="hero-title"
+          className="absolute top-[33%] left-0 z-20 mix-blend-difference text-white"
         >
-          <Nav />
-          <MobileNav />
-        </nav>
-        <section
-          id="hero"
-          className="relative  overflow-hidden w-screen h-screen bg-[#e0e0e0]  flex items-center justify-end flex-col  "
+          <ScrollingText />
+        </div>
+        <div
+          id="hero-footer"
+          className="w-full flex justify-between h-50 sm:h-40 px-4 sm:px-8 items-baseline z-10 text-white mix-blend-difference"
         >
-          <div id="hero-title" className="absolute top-[33%] left-0 z-20 mix-blend-difference text-white">
-            <ScrollingText />
+          <div id="links" className="flex flex-col justify-between">
+            <Link
+              href={"https://www.linkedin.com/in/ahmed-adel-said/"}
+              data-title="Linkedin"
+              className="link hover:cursor-none"
+            >
+              Linkedin
+            </Link>
+            <Link
+              href={"https://github.com/AhmedDula"}
+              data-title="GitHub"
+              className="link hover:cursor-none"
+            >
+              GitHub
+            </Link>
+            <Link
+              href={"https://www.instagram.com/jr.ahmd/"}
+              data-title="Instagram"
+              className="link hover:cursor-none"
+            >
+              Instagram
+            </Link>
           </div>
-          <div
-            id="hero-footer"
-            className="w-full flex justify-between h-50 sm:h-40 px-4 sm:px-8 items-baseline z-10 text-white mix-blend-difference"
-          >
-            <div id="links" className="flex flex-col justify-between">
-              <Link
-                href={"https://www.linkedin.com/in/ahmed-adel-said/"}
-                data-title="Linkedin"
-                className="link hover:cursor-none"
-              >
-                Linkedin
-              </Link>
-              <Link
-                href={"https://github.com/AhmedDula"}
-                data-title="GitHub"
-                className="link hover:cursor-none"
-              >
-                GitHub
-              </Link>
-              <Link
-                href={"https://www.instagram.com/jr.ahmd/"}
-                data-title="Instagram"
-                className="link hover:cursor-none"
-              >
-                Instagram
-              </Link>
-            </div>
-            <div className="text-[5vw] sm:text-[3vw]">
-              <h1 className="font-semibold ">{"// Web Developer"}</h1>
-              <h1 className="font-semibold pl-4 sm:pl-12">Art Designer</h1>
-            </div>
+          <div className="text-[5vw] sm:text-[3vw]">
+            <h1 className="font-semibold ">{"// Web Developer"}</h1>
+            <h1 className="font-semibold pl-4 sm:pl-12">Art Designer</h1>
           </div>
-          <Image
-            id="dula"
-            src={"/ahmed-Photoroom.png"}
-            className="object-cover sm:object-contain w-full top-30 grayscale  h-[110%] absolute z-0 block "
-            width={1920}
-            height={1080}
-            loading="eager"
-            quality={75}
-            sizes="80vw"
-            alt="Ahmed Portfolio Hero"
-            aria-hidden="true"
-          />
-        </section>
-        <section
-          id="intro"
-          className=" sm:px-8 px-4 py-5 sm:py-2 w-screen h-[90vh] border-b border-white/9 "
-        >
-          <div
-            id="intro-content"
-            className="relative h-full flex flex-col justify-center-safe items-center gap-9 overflow-hidden "
-          >
-            <span
-              id="intro-span"
-              className="absolute top-0 left-0 text-orange-700 w-fit h-12 z-90"
-            >
-              {"// intro"}
-            </span>
-            <h2
-              id="intro-h1"
-              className="sm:text-[3vw] font-bold sm:w-[80%] py-10 text-center"
-            >
-              I’m a versatile{" "}
-              <span className="text-orange-700">
-                developer & designer who partners to turn ideas into real
-                products.
-              </span>{" "}
-              I focus on clear interfaces, sharp decisions, and fast execution.
-            </h2>
-            <div className="w-full flex flex-col gap-6 items-end-safe sm:px-20">
-              <div className="flex flex-col sm:w-[50%] gap-7 items-center sm:items-start">
-                <p className=" opacity-55 w-[70%] text-sm md:text-[1.2vw]">
-                  Bringing your vision to life quickly and efficiently—whether
-                  it&apos;s branding, apps, or websites—I&apos;ve got it
-                  covered, delivering smooth and effective solutions from start
-                  to finish.
-                </p>
-                <div
-                
-                  id="intro-link"
-                  className="relative  py-2 w-45 sm:py-4 hover:text-black/90 text-white/60 border border-white/20 text-center rounded-full overflow-hidden"
-                >
-                  <div
-                    id="intro-works"
-                    className="absolute size-40 -bottom-9 left-[5%] scale-0  -z-1 rounded-full text-center bg-orange-700 "
-                  />
-                  See my Works
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section
-          id="service"
-          className="w-screen h-fit border-b border-white/9 px-4 sm:px-8 py-5 "
-        >
-          <div
-            id="service-content"
-            className="relative w-full h-full flex flex-col sm:flex-row"
-          >
-            <span
-              id="service-span"
-              className="text-orange-700 absolute w-fit h-fit z-91"
-            >
-              {"// service"}
-            </span>
-
-            <div
-              id="service-pin"
-              style={{ WebkitTextStroke: "3px #fff" }}
-              className=" hidden text-center w-[40%] md:flex flex-col "
-            >
-              <div id="service-1" className="relative h-1/3 ">
-                <h1 id="span-01" className="text-[13vw] text-transparent">
-                  01
-                </h1>
-              </div>
-              <div id="service-2" className="relative h-1/3">
-                <h1
-                  id="span-02"
-                  className="text-[13vw] text-transparent invisible"
-                >
-                  02
-                </h1>
-              </div>
-              <div id="service-3" className="relative h-1/3">
-                <h1
-                  id="span-03"
-                  className="text-[13vw] text-transparent invisible"
-                >
-                  03
-                </h1>
-              </div>
-            </div>
-
-            <div
-              id="right-side"
-              className=" h-fit md:w-[60%] flex flex-col gap-10  md:gap-70 py-10 sm:pt-50"
-            >
-              <div
-                id="service-brand"
-                className="flex flex-col justify-start gap-5 md:gap-20"
-              >
-                <div className="flex flex-col  ">
-                  <h2 className="sm:text-[3.5vw] font-bold">
-                    Branding & Marketing
-                  </h2>
-                  <p className="sm:w-2/3 text-sm sm:text-[.9vw]  sm:px-3 opacity-55">
-                    Branding that builds trust and drives loyalty through clear
-                    visuals and messaging. into an unforgettable online
-                    experience.
-                  </p>
-                </div>
-                <div className="flex flex-col">
-                  <div className="flex justify-between items-center px-3 border-y border-white/16 h-13">
-                    <h3>Brand Strategy and Messaging</h3>
-                    01
-                  </div>
-                  <div className="flex justify-between items-center-safe px-3 border-b border-white/16 h-13">
-                    <h1>Logo Design</h1>02
-                  </div>
-                  <div className="flex justify-between items-center-safe px-3 border-b border-white/16 h-13">
-                    <h1>Visual Identity</h1>03
-                  </div>
-                  <div className="flex justify-between items-center-safe px-3 border-b border-white/16 h-13">
-                    <h1>Brand Guidelines & Frameworks</h1>04
-                  </div>
-                  <div className="flex justify-between items-center-safe px-3 border-b border-white/16 h-13">
-                    <h1>Marketing materials</h1>05
-                  </div>
-                  <div className="flex justify-between items-center-safe px-3 border-b border-white/16 h-13">
-                    <h1>Motion Design</h1>06
-                  </div>
-                </div>
-              </div>
-
-              <div
-                id="service-web"
-                className=" flex flex-col justify-start gap-5 md:gap-20"
-              >
-                <div className="flex flex-col  ">
-                  <h2 className="sm:text-[3.5vw] font-bold">Website Design </h2>
-                  <p className="sm:w-2/3 text-sm sm:text-[.9vw] sm:px-3 opacity-55">
-                    Not just about aesthetics, but about developing logical,
-                    scalable design systems that are precisely tailored to the
-                    web and app application.
-                  </p>
-                </div>
-                <div className="flex flex-col">
-                  <div className="flex justify-between items-center px-3 border-y border-white/16 h-13">
-                    <h3>Landing Pages </h3>
-                    01
-                  </div>
-                  <div className="flex justify-between items-center-safe px-3 border-b border-white/16 h-13">
-                    <h1>Blogs</h1>02
-                  </div>
-                  <div className="flex justify-between items-center-safe px-3 border-b border-white/16 h-13">
-                    <h1>E-commerce</h1>03
-                  </div>
-                  <div className="flex justify-between items-center-safe px-3 border-b border-white/16 h-13">
-                    <h1>Complex Websites</h1>04
-                  </div>
-                  <div className="flex justify-between items-center-safe px-3 border-b border-white/16 h-13">
-                    <h1>Corporate Websites</h1>05
-                  </div>
-                  <div className="flex justify-between items-center-safe px-3 border-b border-white/16 h-13">
-                    <h1>3D Web Design</h1>06
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col justify-start gap-5 md:gap-20">
-                <div className="flex flex-col">
-                  <h2 className="sm:text-[3.5vw] font-bold">Web Development</h2>
-                  <p className="sm:w-2/3 text-sm sm:text-[.9vw] sm:px-3 opacity-55">
-                    User-focused app design that maximizes usability and
-                    encourages retention.
-                  </p>
-                </div>
-                <div className="flex flex-col">
-                  <div className="flex justify-between items-center px-3 border-y border-white/16 h-13">
-                    <h3>Framer, Webflow, or WordPress Builds</h3>
-                    01
-                  </div>
-                  <div className="flex justify-between items-center-safe px-3 border-b border-white/16 h-13">
-                    <h1>CMS Integration</h1>02
-                  </div>
-                  <div className="flex justify-between items-center-safe px-3 border-b border-white/16 h-13">
-                    <h1>SEO Optimization</h1>03
-                  </div>
-                  <div className="flex justify-between items-center-safe px-3 border-b border-white/16 h-13">
-                    <h1>Site Migrations</h1>04
-                  </div>
-                  <div className="flex justify-between items-center-safe px-3 border-b border-white/16 h-13">
-                    <h1>Marketing materials</h1>05
-                  </div>
-                  <div className="flex justify-between items-center-safe px-3 border-b border-white/16 h-13">
-                    <h1>Motion Design</h1>06
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section
-          id="projects"
-          className="relative h-[520vh] sm:h-[600vh] w-screen  border-b border-white/9 px-4 sm:px-8 py-5  "
-        >
+        </div>
+        <Image
+          id="dula"
+          src={"/ahmed-Photoroom.png"}
+          className="object-cover sm:object-contain w-full top-30 grayscale h-[110%] absolute z-0 block "
+          width={1920}
+          height={1080}
+          loading="eager"
+          quality={75}
+          priority
+          alt="Ahmed Portfolio Hero"
+          aria-hidden="true"
+        />
+      </section>
+      <section
+        id="intro"
+        className=" sm:px-8 px-4 py-5 sm:py-2 w-full h-[90vh] border-b border-white/9  relative"
+      >
           <span
-            id="projects-span"
-            className="text-orange-700 absolute w-fit h-fit z-91"
+            id="intro-span"
+            className="sticky top-0 left-0 text-orange-700 w-fit h-fit whitespace-nowrap z-90"
           >
-            {"// projects"}
+            {"// intro"}
           </span>
-          <div
-            id="projects-content"
-            className="relative w-full h-screen  overflow-hidden sm:cursor-none  flex flex-col flex-nowrap will-change-transform transform-gpu"
+        <div
+          id="intro-content"
+          className="relative h-full flex flex-col justify-center-safe items-center gap-9 overflow-hidden "
+        >
+          <h2
+            id="intro-h1"
+            className="sm:text-[3vw] font-bold sm:w-[80%] py-10 text-center"
           >
-            <Link
-              href={"/projects/fringe-sports"}
-              
-              id="project-1"
-              className="project-1 bg-[#121111] absolute p-5 rounded-3xl w-full min-h-full  gap-2 flex flex-col md:flex-row sm:cursor-none"
-            >
-              <div className=" md:w-[70%]  rounded-2xl border border-white/10 min-h-full overflow-hidden">
-                <Image
-                  src={"https://images.pexels.com/photos/10620483/pexels-photo-10620483.jpeg"}
-                  width={1920}
-                  height={1080}
-                  quality={75}
-                  
-                  alt=""
-                  className="w-full h-full object-cover"
+            I’m a versatile{" "}
+            <span className="text-orange-700">
+              developer & designer who partners to turn ideas into real
+              products.
+            </span>{" "}
+            I focus on clear interfaces, sharp decisions, and fast execution.
+          </h2>
+          <div className="w-full flex flex-col gap-6 items-end-safe sm:px-20">
+            <div className="flex flex-col sm:w-[50%] gap-7 items-center sm:items-start">
+              <p className=" opacity-55 w-[70%] text-sm md:text-[1.2vw]">
+                Bringing your vision to life quickly and efficiently—whether
+                it&apos;s branding, apps, or websites—I&apos;ve got it covered,
+                delivering smooth and effective solutions from start to finish.
+              </p>
+              <div
+                id="intro-link"
+                className="relative  py-2 w-45 sm:py-4 hover:text-black/90 text-white/60 border border-white/20 text-center rounded-full overflow-hidden"
+              >
+                <div
+                  id="intro-works"
+                  className="absolute size-40 -bottom-9 left-[5%] scale-0  -z-1 rounded-full text-center bg-orange-700 "
                 />
-              </div>
-              <div className=" md:w-[30%]  rounded-2xl border border-white/10 min-h-full flex flex-col justify-between p-6">
-                <div className="flex flex-col gap-5">
-                  <span>( 2030 )</span>
-                  <h2 className="text-3xl font-bold">Formula One </h2>
-                  <p className="text-sm">
-                    For Formula Vintage, we crafted a design that honors the
-                    rich heritage of classic cars while adding a modern twist.
-                    Combining timeless elegance with sleek, contemporary
-                    elements, we created an experience that appeals to both
-                    enthusiasts and newcomers, celebrating the past with a fresh
-                    perspective.
-                  </p>
-                </div>
-                <div>
-                  <h3 className=" py-2 border-b border-white/20">
-                    Landing Page
-                  </h3>
-                  <h3 className=" py-2 border-b border-white/20">Responsive</h3>
-                  <h3 className=" py-2 border-b border-white/20">Motions</h3>
-                </div>
-              </div>
-            </Link>
-            <Link
-              href={"/2"}
-              id="project-2"
-              className="project bg-[#121111] p-4 rounded-3xl absolute w-full min-h-full gap-2 flex flex-col md:flex-row sm:cursor-none"
-            >
-              <div className=" md:w-[70%] border border-white/10 rounded-2xl  min-h-full overflow-hidden ">
-                <Image
-                  src={"/ciel.jpg"}
-                  width={1920}
-                  height={1080}
-                  alt=""
-                  className="w-full  h-full object-cover"
-                  sizes={"(max-width:768px) 100vw,1300px"}
-                  quality={75}
-                  
-                />
-              </div>
-              <div className=" md:w-[30%] border border-white/10 rounded-2xl  min-h-full flex flex-col justify-between p-6">
-                <div className="flex flex-col gap-5">
-                  <span>( 2030 )</span>
-                  <h2 className="text-3xl font-bold">Sur Face </h2>
-                  <p className="text-sm">
-                    portfolio showcases a fully responsive, high-performance web
-                    experience built with modern front-end techniques. Every
-                    section adapts smoothly to all screen sizes, ensuring a
-                    consistent and polished look on mobile, tablet, and desktop.
-                    design focuses on clarity, smooth motion, and seamless
-                    responsiveness—highlighting both technical skill and
-                    attention to user experience.
-                  </p>
-                </div>
-                <div>
-                  <h3 className=" py-2 border-b border-white/20">
-                    Landing Page
-                  </h3>
-                  <h3 className=" py-2 border-b border-white/20">Animations</h3>
-                  <h3 className=" py-2 border-b border-white/20">
-                    Performance
-                  </h3>
-                </div>
-              </div>
-            </Link>
-            <Link
-              href={"https://ciel-d-or.vercel.app/"}
-              id="project-3"
-              className="project bg-[#121111] p-4 rounded-3xl absolute w-full h-full gap-2 flex flex-col md:flex-row sm:cursor-none"
-            >
-              <div className=" md:w-[70%] border border-white/10 rounded-2xl  overflow-hidden ">
-                <Image
-                  src={"/ciel.jpg"}
-                  width={1400}
-                  height={1000}
-                  sizes={"(max-width:768px) 100vw,1300px"}
-                  quality={75}
-                  alt="2"
-                  className="w-full min-h-full object-cover"
-                />
-              </div>
-              <div className=" md:w-[30%] border border-white/10 rounded-2xl flex flex-col justify-between p-6">
-                <div className="flex flex-col gap-5">
-                  <span>( 2030 )</span>
-                  <h2 className="text-3xl font-bold">Ciel D&apos;or</h2>
-                  <p className="text-sm">
-                    Ciel Dor is a responsive restaurant website that blends
-                    elegant visuals with tasteful scroll-triggered animations.
-                    As users scroll, subtle transitions reveal the story of the
-                    menu, chef, and interior — guiding attention, improving
-                    discoverability, and creating a memorable browsing
-                    experience without sacrificing speed. Built with
-                    accessibility and performance in mind, the site adapts
-                    beautifully across devices and keeps interactions fast and
-                    effortless.
-                  </p>
-                </div>
-                <div>
-                  <h3 className=" py-2 border-b border-white/20">Luxury</h3>
-                  <h3 className=" py-2 border-b border-white/20">
-                    Smooth Scrolling
-                  </h3>
-                  <h3 className=" py-2 border-b border-white/20">Simple</h3>
-                </div>
-              </div>
-            </Link>
-          </div>
-        </section>
-       
-          <section
-            id="testimonials"
-            className="w-screen h-screen border-b border-white/9 bg-[#121111] px-4 sm:px-8 py-5 relative z-2"
-          >
-            <span
-              id="testimonials-span"
-              className="text-orange-700 absolute w-fit h-fit z-9001"
-            >
-              {"// Testimonials"}
-            </span>
-            <div
-              id="testimonials-content"
-              className="w-full h-[90%] py-40 flex flex-col gap-3 items-end justify-center-safe"
-            >
-              <div className="sm:w-[80%] flex items-center-safe sm:justify-between">
-                <h2
-                  id="testimonials-h2"
-                  className="text-[5vw] md:text-[3.4vw] font-bold w-[80%] sm:w-[70%] "
-                >
-                  “His keen eye for detail{" "}
-                  <span className=" text-orange-700">
-                    and innovative approach impressed our team, turning
-                    challenge creative solutions that set him apart.”{" "}
-                  </span>
-                </h2>
-
-                <div className="w-fit border-3 border-orange-600/90  rounded-full overflow-hidden ">
-                  <Image
-                    src={"/ahmed-Photoroom.png"}
-                    width={600}
-                    height={500}
-                    alt=""
-                    className="size-15 sm:size-20 object-cover  grayscale "
-                  />
-                </div>
-              </div>
-              <div className="w-full sm:w-[80%]">
-                <p className="font-semibold">{"// Ahmed Adel"}</p>
-                <p className="opacity-55">CEO, Founder</p>
+                See my Works
               </div>
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
+      <ServiceSection/>
       
-        
-      
+
+      <ProjectsStack projects={projects}/>
+      <section
+        id="testimonials"
+        className="w-full h-screen border-b border-white/9 bg-[#121111] px-4 sm:px-8 py-5 relative z-2 overflow-hidden"
+      >
+        <span
+          id="testimonials-span"
+          className="text-orange-700 absolute w-fit h-fit z-9001"
+        >
+          {"// Testimonials"}
+        </span>
+        <div
+          id="testimonials-content"
+          className="w-full h-[90%] py-40 flex flex-col gap-3 items-end justify-center-safe"
+        >
+          <div className="sm:w-[80%] flex items-center-safe sm:justify-between">
+            <h2
+              id="testimonials-h2"
+              className="text-[5vw] md:text-[3.4vw] font-bold w-[80%] sm:w-[70%] "
+            >
+              “His keen eye for detail{" "}
+              <span className=" text-orange-700">
+                and innovative approach impressed our team, turning challenge
+                creative solutions that set him apart.”{" "}
+              </span>
+            </h2>
+
+            <div className="w-fit border-3 border-orange-600/90  rounded-full overflow-hidden ">
+              <Image
+                src={"/ahmed-Photoroom.png"}
+                width={600}
+                height={500}
+                alt=""
+                className="size-15 sm:size-20 object-cover  grayscale "
+              />
+            </div>
+          </div>
+          <div className="w-full sm:w-[80%]">
+            <p className="font-semibold">{"// Ahmed Adel"}</p>
+            <p className="opacity-55">CEO, Founder</p>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

@@ -4,6 +4,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import RevealFooter from "./_components/RevealFooter";
 import SmoothScroll from "./_components/Lenis";
+import Nav from "./_components/nav";
+import MobileNav from "./_components/mobileNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -68,11 +70,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-clip w-screen`}
       >
         <SmoothScroll />
         <SpeedInsights />
-
+        <nav
+          id="Nav"
+          className="z-50 relative w-full  overflow-visible h-fit text-white mix-blend-difference"
+        >
+          <Nav />
+          <MobileNav />
+        </nav>
         {children}
         <RevealFooter />
       </body>

@@ -2,11 +2,12 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-import React, { useState } from "react";
+
 import NavLink from "./links";
 import { BiCopyright } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import { TbMenu } from "react-icons/tb";
+import { useState } from "react";
 
 function MobileNav() {
   const [openNav, setOpenNav] = useState(false);
@@ -44,12 +45,12 @@ function MobileNav() {
           Ahmed
         </h1>{" "}
         <button className="" onClick={() => setOpenNav(!openNav)}>
-          <TbMenu size={20} />
+          <TbMenu size={35} />
         </button>
       </div>
       <div
         id="navMO"
-        className="absolute top-0 left-0 z-30 border-b border-white/10 -translate-y-full bg-[#121111] invisible min-h-40 w-full flex flex-col p-4 gap-4 justify-between"
+        className="absolute top-0 left-0 z-30 border-b border-white/10 -translate-y-full bg-[#121111] invisible min-h-20 w-full flex flex-col p-4 gap-4 justify-between"
       >
         <div className="flex justify-between">
           <h1 className="flex items-center-safe">
@@ -59,7 +60,7 @@ function MobileNav() {
             <NavLink href={"/"}> <BiCopyright size={18} />Ahmed</NavLink>
           </h1>{" "}
           <button className="" onClick={() => setOpenNav(!openNav)}>
-            <AiOutlineClose size={20} />
+            <AiOutlineClose size={35} />
           </button>
         </div>
         <div className="linkNav " >

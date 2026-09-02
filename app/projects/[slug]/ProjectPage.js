@@ -45,13 +45,7 @@ function ProjectPage({ project }) {
   return (
     <main className="overflow-hidden bg-background relative z-2">
       {" "}
-      <nav
-        id="Nav"
-        className="z-300 relative w-full overflow-visible h-fit text-white mix-blend-difference "
-      >
-        {" "}
-        <Nav /> <MobileNav />{" "}
-      </nav>
+     
       <section className="f min-h-screen ">
         <div className="h-screen max-w-screen overflow-hidden ">
           <Image
