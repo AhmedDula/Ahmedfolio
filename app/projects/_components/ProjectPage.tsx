@@ -99,7 +99,7 @@ function ProjectPage({ project }: ProjectPageProps) {
               <Image
                 className="parallax-img absolute -top-50 object-cover w-full h-[170%] will-change-transform"
                 src={src}
-                width={1920}
+                width={1200}
                 height={1080}
                 loading="eager"
                 quality={75}

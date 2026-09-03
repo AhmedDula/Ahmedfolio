@@ -39,7 +39,7 @@ export default function ProjectsStack({ projects }: ProjectsStackProps) {
             <div className="h-full overflow-hidden rounded-2xl border border-white/10  md:w-[70%]">
               <Image
                 src={p.coverImage}
-                width={1920}
+                width={1200}
                 height={1080}
                 quality={75}
                 sizes="(max-width: 768px) 100vw, 70vw"

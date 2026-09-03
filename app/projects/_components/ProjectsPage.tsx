@@ -94,7 +94,7 @@ function ProjectPage() {
                 <div className="md:w-[70%] rounded-2xl border border-white/10 h-full overflow-hidden">
                   <Image
                     src={p.coverImage}
-                    width={1920}
+                    width={1200}
                     height={1080}
                     quality={75}
                     priority

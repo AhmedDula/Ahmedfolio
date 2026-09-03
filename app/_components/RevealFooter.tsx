@@ -125,10 +125,10 @@ export default function RevealFooter() {
       </div>
       <Image
         id="footer-img"
-        src="/ahmed-Photoroom.png"
+        src="/ahmed-Photoroom.avif"
         className="object-cover sm:object-contain grayscale w-full h-[120%] top-10 absolute -z-1"
-        width={1920}
-        height={1200}
+        width={1200}
+        height={1080}
         quality={75}
         alt="footer-img"
       />
