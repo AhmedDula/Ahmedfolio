@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+
 import gsap from "gsap";
 import { Observer } from "gsap/Observer";
 import { SplitText } from "gsap/all";
@@ -20,17 +20,7 @@ export default function ScrollingText() {
       paddingRight: 30,
     });
 
-    // Observer.create({
-    //   onChangeY(self) {
-    //     let factor = 2.5;
-    //     if (self.deltaY < 0) factor *= -1;
-
-    //     gsap
-    //       .timeline({ defaults: { ease: "none" } })
-    //       .to(tl, { timeScale: factor * 2.5, duration: 0.5, overwrite: true })
-    //       .to(tl, { timeScale: factor / 2.5, duration: 1 }, "+=0.3");
-    //   },
-    // });
+ 
   }, []);
 
   return (

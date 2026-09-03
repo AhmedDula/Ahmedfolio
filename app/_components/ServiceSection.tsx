@@ -1,58 +1,66 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, type RefObject } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SERVICES = [
+type Service = {
+  number: string;
+  title: string;
+  description: string;
+  items: string[];
+};
+
+type DigitStripProps = {
+  stripRef: RefObject<HTMLDivElement | null>;
+  maxDigit: number;
+};
+
+const SERVICES: Service[] = [
   {
     number: "01",
-    title: "Branding & Marketing",
+    title: "Web Development",
     description:
-      "Branding that builds trust and drives loyalty through clear visuals and messaging. into an unforgettable online experience.",
+      "I build modern, responsive, and high-performance websites and web applications focused on usability, speed, and scalability.",
     items: [
-      "Brand Strategy and Messaging",
-      "Logo Design",
-      "Visual Identity",
-      "Brand Guidelines & Frameworks",
-      "Marketing materials",
-      "Motion Design",
+      "Next.js",
+      "React",
+      "Responsive Web Design",
+      "Performance Optimization",
     ],
   },
   {
     number: "02",
-    title: "Website Design",
+    title: "Full-Stack Development",
     description:
-      "Not just about aesthetics, but about developing logical, scalable design systems that are precisely tailored to the web and app application.",
-    items: [
-      "Landing Pages",
-      "Blogs",
-      "E-commerce",
-      "Complex Websites",
-      "Corporate Websites",
-      "3D Web Design",
-    ],
+      "I develop complete web applications with reliable backends, APIs, databases, authentication, and seamless frontend experiences.",
+    items: ["Node.js", "Express.js", "MongoDB", "REST APIs", "Authentication"],
   },
   {
     number: "03",
-    title: "Web Development",
+    title: "UI/UX Design",
     description:
-      "User-focused app design that maximizes usability and encourages retention.",
+      "I design clean and intuitive digital interfaces that balance visual identity, usability, accessibility, and user experience.",
+    items: ["Interface Design", "UX Design", "Design Systems", "Prototyping"],
+  },
+  {
+    number: "04",
+    title: "Creative Development",
+    description:
+      "I create interactive digital experiences using animation and motion to make interfaces feel engaging without sacrificing performance.",
     items: [
-      "Framer, Webflow, or WordPress Builds",
-      "CMS Integration",
-      "SEO Optimization",
-      "Site Migrations",
-      "Marketing materials",
-      "Motion Design",
+      "GSAP",
+      "Scroll Animations",
+      "Micro Interactions",
+      "Interactive Experiences",
     ],
   },
 ];
 
-function DigitStrip({ stripRef, maxDigit }) {
+function DigitStrip({ stripRef, maxDigit }: DigitStripProps) {
   const digits = Array.from({ length: maxDigit + 1 }, (_, i) => i);
 
   return (
@@ -79,15 +87,19 @@ function DigitStrip({ stripRef, maxDigit }) {
 }
 
 export default function ServiceSection() {
-  const containerRef = useRef(null);
-  const sectionRefs = useRef([]);
-  const tensRef = useRef(null);
-  const unitsRef = useRef(null);
+  const containerRef = useRef<HTMLElement | null>(null);
+  const sectionRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const tensRef = useRef<HTMLDivElement | null>(null);
+  const unitsRef = useRef<HTMLDivElement | null>(null);
   const activeIndexRef = useRef(-1);
 
   // Calculate max digits needed
-  const maxTens = Math.max(...SERVICES.map((s) => parseInt(s.number[0])));
-  const maxUnits = Math.max(...SERVICES.map((s) => parseInt(s.number[1])));
+  const maxTens = Math.max(
+    ...SERVICES.map((s) => Number.parseInt(s.number[0], 10)),
+  );
+  const maxUnits = Math.max(
+    ...SERVICES.map((s) => Number.parseInt(s.number[1], 10)),
+  );
 
   useGSAP(() => {
     const reduceMotion = window.matchMedia(
@@ -103,15 +115,17 @@ export default function ServiceSection() {
 
     activeIndexRef.current = 0;
 
-    const goTo = (index, instant = false) => {
+    const goTo = (index: number, instant = false) => {
       if (activeIndexRef.current === index) return;
       activeIndexRef.current = index;
 
       const numberStr = SERVICES[index].number;
-      const tens = parseInt(numberStr[0]);
-      const units = parseInt(numberStr[1]);
+      const tens = Number.parseInt(numberStr[0], 10);
+      const units = Number.parseInt(numberStr[1], 10);
 
       const duration = instant || reduceMotion ? 0 : 0.5;
+
+      if (!tensRef.current || !unitsRef.current) return;
 
       // Calculate the offset: each digit is 1em tall
       const tensOffset = -tens + "em";
@@ -181,7 +195,7 @@ export default function ServiceSection() {
           className="hidden text-center w-1/3 md:flex flex-col sticky top-10 h-fit"
         >
           <div id="service-1-number" className="relative h-1/3">
-            <h1
+            <div
               id="span-01"
               className="text-[25vw] text-transparent flex justify-center leading-none"
               style={{ perspective: 600 }}
@@ -189,7 +203,7 @@ export default function ServiceSection() {
             >
               <DigitStrip stripRef={tensRef} maxDigit={maxTens} />
               <DigitStrip stripRef={unitsRef} maxDigit={maxUnits} />
-            </h1>
+            </div>
           </div>
         </div>
 
@@ -201,7 +215,9 @@ export default function ServiceSection() {
             <div
               key={service.number}
               id={`service-${i + 1}`}
-              ref={(el) => (sectionRefs.current[i] = el)}
+              ref={(el: HTMLDivElement | null) => {
+                sectionRefs.current[i] = el;
+              }}
               className="flex flex-col justify-start gap-5 md:gap-20"
             >
               <div className="flex flex-col">

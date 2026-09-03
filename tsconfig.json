@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/_components/RevealFooter.tsx"  ],
+, "app/_components/RevealFooter.tsx", "app/contacts/page.tsx"  ],
   "exclude": ["node_modules"]
 }

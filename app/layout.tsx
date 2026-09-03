@@ -22,9 +22,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.SITE_URL!),
+
   title: "Ahmed Adel | Full-Stack Developer & Designer",
+
   description:
-    "Ahmed Adel — a versatile full-stack developer & designer who turns ideas into real products. I build modern web experiences, clean interfaces, fast applications, and creative digital identities. Skilled in React, Next.js, Node.js, MongoDB, UI/UX, animations, and performance-driven design.",
+    "Ahmed Adel — a versatile full-stack developer & designer who turns ideas into real products. I build modern web experiences, clean interfaces, fast applications, and creative digital identities. Skilled in React, Next.js, Node.js, UI/UX, animations, and performance-driven design.",
+
   keywords: [
     "Ahmed Adel",
     "Full Stack Developer",
@@ -36,16 +40,22 @@ export const metadata: Metadata = {
     "Backend Developer",
     "Portfolio",
   ],
+
   authors: [{ name: "Ahmed Adel" }],
+
+  alternates: {
+    canonical: "/",
+  },
+
   openGraph: {
     title: "Ahmed Adel | Developer & Designer Portfolio",
     description:
       "A creative developer & designer delivering modern, fast, and visually refined digital products.",
-    url: "https://ahmedfoliodula.vercel.app/",
+    url: "/",
     siteName: "Ahmed Adel Portfolio",
     images: [
       {
-        url: "https://ahmedfoliodula.vercel.app/og-image.png",
+        url: "/og-image.avif",
         width: 1200,
         height: 630,
         alt: "Ahmed Adel Portfolio Preview",
@@ -53,12 +63,13 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Ahmed Adel | Developer & Designer",
     description:
       "A versatile developer & designer creating modern digital experiences.",
-    images: ["https://ahmedfoliodula.vercel.app/og-image.png"],
+    images: ["/og-image.avif"],
   },
 };
 

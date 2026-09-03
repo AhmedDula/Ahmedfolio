@@ -114,13 +114,13 @@ export default function RevealFooter() {
         </div>{" "}
         <div>
           {" "}
-          <h1 className="font-semibold sm:text-6xl">
+          <p className="font-semibold sm:text-6xl">
             {"// Web Developer"}
-          </h1>{" "}
-          <h1 className="font-semibold sm:text-6xl pl-4 sm:pl-12">
+          </p>{" "}
+          <p className="font-semibold sm:text-6xl pl-4 sm:pl-12">
             {" "}
             Art Designer{" "}
-          </h1>{" "}
+          </p>{" "}
         </div>{" "}
       </div>
       <Image
