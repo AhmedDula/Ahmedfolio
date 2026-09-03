@@ -22,6 +22,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  verification:{
+google:"5RAD1I05wWLl_bxy71FkKqv6NtGAqJxvdvM9lKD9dg8"
+  },
   metadataBase: new URL(process.env.SITE_URL!),
 
   title: "Ahmed Adel | Full-Stack Developer & Designer",
