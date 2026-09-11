@@ -18,7 +18,7 @@ type Project = {
   year: number;
   link:string;
   category:string;
-  keywords: [string]
+  keywords: string[]
 };
 
 type ProjectPageProps = {
