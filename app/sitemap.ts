@@ -1,4 +1,4 @@
-import type { MetadataRoute } from "next"; import { projects } from "./data/projects";
+import type { MetadataRoute } from "next"; import { projects } from "./(site)/data/projects";
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = process.env.SITE_URL!;
     const projectUrls = projects.map((project) => ({

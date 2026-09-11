@@ -2,10 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
-import RevealFooter from "./_components/RevealFooter";
-import SmoothScroll from "./_components/Lenis";
-import Nav from "./_components/nav";
-import MobileNav from "./_components/mobileNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,8 +18,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  verification:{
-google:"5RAD1I05wWLl_bxy71FkKqv6NtGAqJxvdvM9lKD9dg8"
+  verification: {
+    google: "5RAD1I05wWLl_bxy71FkKqv6NtGAqJxvdvM9lKD9dg8",
   },
   metadataBase: new URL(process.env.SITE_URL!),
 
@@ -86,17 +82,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-clip w-screen`}
       >
-        <SmoothScroll />
         <SpeedInsights />
-        <nav
-          id="Nav"
-          className="z-50 relative w-full  overflow-visible h-fit text-white mix-blend-difference"
-        >
-          <Nav />
-          <MobileNav />
-        </nav>
         {children}
-        <RevealFooter />
       </body>
     </html>
   );

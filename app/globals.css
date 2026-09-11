@@ -3,10 +3,24 @@
 :root {
   --background: #121111;
   --foreground: #ffffff;
+@theme {
+  /* Caption: 12px → 14px */
+  --text-caption: clamp(0.75rem, 0.7rem + 0.15vw, 0.875rem);
 
-  --font-hero: clamp(2.5rem, 5vw, 7rem);
+  /* Body: 14px → 18px */
+  --text-body: clamp(0.875rem, 0.8rem + 0.25vw, 1.125rem);
+
+  /* Lead: 18px → 24px */
+  --text-lead: clamp(1.125rem, 1rem + 0.4vw, 1.5rem);
+
+  /* Heading: 32px → 64px */
+  --text-heading: clamp(2rem, 1.5rem + 1.5vw, 4rem);
+
+  /* Hero: 32px → 96px */
+  --text-hero: clamp(2.2rem, 2rem + 4vw, 6rem);
+}
   --font-title: clamp(2rem, 3vw, 4rem);
-  --font-body: clamp(0.95rem, 1.2vw, 1.2rem);
+  
 }
 
 @utility text-hero {
