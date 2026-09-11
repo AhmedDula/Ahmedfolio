@@ -19,7 +19,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   verification: {
-    google: "5RAD1I05wWLl_bxy71FkKqv6NtGAqJxvdvM9lKD9dg8",
+    google: "fDo1kE5zborpSNJP1pzAnEbQWCF6jjH6_mRAxSuQais",
   },
   metadataBase: new URL(process.env.SITE_URL!),
 
