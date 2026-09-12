@@ -168,7 +168,7 @@ function ProjectPage({ project }: ProjectPageProps) {
                   />
                 </Link>
                 <div className="w-full md:w-1/3 xl:w-full xl:h-[20%] border border-white/20 rounded-2xl px-3 sm:px-5 py-4 sm:py-10 xl:py-2 flex flex-col justify-between">
-                  <h3 className="text-heading font-bold whitespace-nowrap">
+                  <h3 className="text-heading font-bold ">
                     {mp.title}
                     <p className="text-body font-mono text-white/70 font-light">
                       ({mp.year})
