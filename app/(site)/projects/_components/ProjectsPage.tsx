@@ -153,17 +153,17 @@ function ProjectPage() {
                 />
                 <div className="flex gap-1 w-full flex-col sm:flex-row justify-between  ">
                   <div className="flex gap-1 w-full">
-                    <h3 className="text-white whitespace-nowrap">{p.title}</h3>
+                    <h3 className="text-white ">{p.title}</h3>
                     <p className="">({p.year})</p>
                   </div>
                   <p className="w-full whitespace-nowrap flex sm:justify-center">{p.category}</p>
                 </div>
-                <div className="w-1/3 flex justify-end">
-                  <p className="group-hover:hidden whitespace-nowrap">{`0 ${i + 1}`}</p>
+               <div className="w-1/3 flex justify-end ">
                   <FiArrowUpRight
                     size={25}
-                    className=" group-hover:block hidden text-white/90 "
+                    className=" group-hover:block sm:hidden text-white/90 "
                   />
+                  <p className="group-hover:hidden hidden sm:block whitespace-nowrap">{`0 ${i + 1}`}</p>
                 </div>
               </div>
             </Link>
