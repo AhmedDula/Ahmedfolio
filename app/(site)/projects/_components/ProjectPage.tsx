@@ -175,52 +175,10 @@ function ProjectPage({ project }: ProjectPageProps) {
             })}
           </div>
         </section>
-        {/* <section
-          
-          aria-labelledby="more-projects-title"
-          className="w-screen h-full border-b border-white/9 bg-[#121111] px-4 sm:px-8 py-5 z-5 relative"
-        >
-          <h2
-            id="more-projects-title"
-            className="text-orange-700 font-semibold mix-blend-difference sticky top-0 w-fit h-fit z-9001"
-          >
-            {"// More Projects"}
-          </h2>
-
-          <div className="w-full min-h-screen h-fit flex flex-wrap md:flex-nowrap gap-6">
-            {projects.map((mp, i) => {
-              if (mp.slug === path) return null;
-
-              return (
-                <article key={i} className="flex flex-col gap-3 w-full ">
-                  <Link
-                    href={`/projects/${mp.slug}`}
-                    aria-label={`View project: ${mp.title}`}
-                    className="w-full h-120 md:h-full border border-white/20 rounded-2xl overflow-hidden"
-                  >
-                    <Image
-                      src={mp.coverImage}
-                      width={1200}
-                      height={1080}
-                      quality={75}
-                      alt={mp.title}
-                      className="w-full  h-full object-cover"
-                    />
-                  </Link>
-                  <div className="w-full h-[20%] border border-white/20 rounded-2xl px-5 py-10 sm:py-2 flex flex-col justify-center">
-                    <h3 className="text-heading font-bold whitespace-nowrap">
-                      {mp.title}
-                    </h3>
-                    <p className="text-body">({mp.year})</p>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </section> */}
+       
         <section className=" h-fit relative w-screen ">
         <h2
-          id="more-projects-title"
+          
           className=" text-orange-700 font-semibold mix-blend-difference sticky top-0 w-fit h-fit z-9001 px-4 sm:px-8 py-5"
         >
           {"// Live Preview"}
@@ -252,12 +210,12 @@ function ProjectPage({ project }: ProjectPageProps) {
                   </div>
                   <p className="w-full whitespace-nowrap flex sm:justify-center">{p.category}</p>
                 </div>
-                <div className="w-1/3 flex justify-end">
-                  <p className="group-hover:hidden whitespace-nowrap">{`0 ${i + 1}`}</p>
+                <div className="w-1/3 flex justify-end gap-5">
                   <FiArrowUpRight
                     size={25}
-                    className=" group-hover:block hidden text-white/90 "
+                    className=" group-hover:block sm:hidden text-white/90 "
                   />
+                  <p className="group-hover:hidden hidden sm:block whitespace-nowrap">{`0 ${i + 1}`}</p>
                 </div>
               </div>
             </Link>
