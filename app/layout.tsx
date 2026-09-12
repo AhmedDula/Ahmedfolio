@@ -17,11 +17,16 @@ export const viewport: Viewport = {
   themeColor: "#ff5a1f",
 };
 
+const baseUrl = process.env.SITE_URL;
+if (!baseUrl) {
+  throw new Error("SITE_URL is not defined");
+}
 export const metadata: Metadata = {
   verification: {
     google: "fDo1kE5zborpSNJP1pzAnEbQWCF6jjH6_mRAxSuQais",
   },
-  metadataBase: new URL(process.env.SITE_URL!),
+
+  metadataBase: new URL(baseUrl),
 
   title: "Ahmed Adel | Full-Stack Developer & Designer",
 
@@ -38,6 +43,7 @@ export const metadata: Metadata = {
     "Frontend Developer",
     "Backend Developer",
     "Portfolio",
+    "Ahmed Adel Portfolio",
   ],
 
   authors: [{ name: "Ahmed Adel" }],
@@ -48,28 +54,79 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Ahmed Adel | Developer & Designer Portfolio",
+
     description:
       "A creative developer & designer delivering modern, fast, and visually refined digital products.",
+
     url: "/",
-    siteName: "Ahmed Adel Portfolio",
+
+    siteName: "Ahmed Adel",
+
     images: [
       {
         url: "/og-image.avif",
+
         width: 1200,
+
         height: 630,
+
         alt: "Ahmed Adel Portfolio Preview",
       },
     ],
+
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
+
     title: "Ahmed Adel | Developer & Designer",
+
     description:
       "A versatile developer & designer creating modern digital experiences.",
+
     images: ["/og-image.avif"],
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+
+  "@graph": [
+    {
+      "@type": "Person",
+
+      "@id": `${baseUrl}/#person`,
+
+      name: "Ahmed Adel",
+
+      url: baseUrl,
+
+      jobTitle: "Full-Stack Developer & Designer",
+
+      description:
+        "Ahmed Adel is a Full-Stack Developer & Designer specializing in modern web experiences, React, Next.js, Node.js, UI/UX, animations, and performance.",
+    },
+
+    {
+      "@type": "WebSite",
+
+      "@id": `${baseUrl}/#website`,
+
+      url: baseUrl,
+
+      name: "Ahmed Adel",
+
+      alternateName: "Ahmed Adel Portfolio",
+
+      description:
+        "Portfolio of Ahmed Adel, a Full-Stack Developer & Designer.",
+
+      publisher: {
+        "@id": `${baseUrl}/#person`,
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -82,6 +139,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-clip w-screen`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
+        />
         <SpeedInsights />
         {children}
       </body>
