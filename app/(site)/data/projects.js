@@ -6,7 +6,7 @@ export const projects = [
     link: "https://ciel-d-or.vercel.app/",
     overview:
   "An elegant restaurant experience designed for Ciel d’Or, combining refined visuals, immersive storytelling, and smooth GSAP animations to showcase its menu, services, and dining experience through a premium responsive interface.",
-coverImage: "/Ciel-cover-2.avif",
+coverImage: "/Ciel-cover.avif",
     galleryImages: [
       {
         desktop: "/Ciel-hero.avif",
@@ -89,36 +89,38 @@ coverImage: "/Ciel-cover-2.avif",
     ],
     year: 2026,
   },
-
   {
-    slug: "creative-portfolio",
-    title: "Creative Portfolio",
-    category: "Web Design",
-    link: "https://portfolio-creativa.vercel.app/",
-    overview:
-      "A creative portfolio experience designed to showcase digital work through immersive case studies, selected projects, testimonials, and service-focused sections, combining strong visual presentation with a modern, interactive interface.",
-    coverImage: "/Creative-cover.avif",
-    galleryImages: [
-      {
-        desktop: "/Creative-hero.avif",
-        mobile: "/Creative-hero-mb.avif",
-      },
-      {
-        desktop: "/Creative-study.avif",
-        mobile: "/Creative-study-mb.avif",
-      },
-      {
-        desktop: "/Creative-testimonials.avif",
-        mobile: "/Creative-testimonials-mb.avif",
-      },
-    ],
-    keywords: [
-      "Case Study",
-      "Web Design",
-      "Responsive"
-    ],
-    year: 2026,
-  },
+  slug: "cinevia",
+  title: "Cinevia",
+  category: "Web Development",
+  keywords: [
+    "Movie Platform",
+    "Web Development",
+    "Responsive",
+  ],
+  link: "https://cinevia-two.vercel.app/",
+  overview:
+    "A modern movie discovery platform designed to make exploring films feel immersive and effortless, with detailed movie pages, personalized watchlists, and a clean responsive interface focused on an engaging browsing experience.",
+  coverImage:
+    "/Cinevia-hero.avif",
+  galleryImages: [
+    {
+      desktop: "/Cinevia-hero.avif",
+      mobile: "/Cinevia-hero-mb.avif",
+    },
+    {
+      desktop: "/Cinevia-wish.avif",
+      mobile: "/Cinevia-wish-mb.avif",
+    },
+    {
+      desktop: "/Cinevia-details.avif",
+      mobile: "/Cinevia-details-mb.avif",
+    },
+  ],
+  year: 2026,
+},
+
+  
 
   {
     slug: "aurelio",
@@ -148,5 +150,34 @@ coverImage: "/Ciel-cover-2.avif",
       "Responsive"
     ],
     year: 2025,
+  },
+  {
+    slug: "creative-portfolio",
+    title: "Creative Portfolio",
+    category: "Web Design",
+    link: "https://portfolio-creativa.vercel.app/",
+    overview:
+      "A creative portfolio experience designed to showcase digital work through immersive case studies, selected projects, testimonials, and service-focused sections, combining strong visual presentation with a modern, interactive interface.",
+    coverImage: "/Creative-cover.avif",
+    galleryImages: [
+      {
+        desktop: "/Creative-hero.avif",
+        mobile: "/Creative-hero-mb.avif",
+      },
+      {
+        desktop: "/Creative-study.avif",
+        mobile: "/Creative-study-mb.avif",
+      },
+      {
+        desktop: "/Creative-testimonials.avif",
+        mobile: "/Creative-testimonials-mb.avif",
+      },
+    ],
+    keywords: [
+      "Case Study",
+      "Web Design",
+      "Responsive"
+    ],
+    year: 2026,
   },
 ];
