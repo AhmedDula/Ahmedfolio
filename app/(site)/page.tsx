@@ -1,9 +1,8 @@
-import ProjectsStack from "./_components/stacking-projects";
-import { projects } from "./data/projects";
-import ServiceSection from "./_components/ServiceSection";
 import Hero from "./_components/Hero";
-import Testimonials from "./_components/Testimonials";
 import Intro from "./_components/Intro";
+import ServiceSection from "./_components/ServiceSection";
+import ProjectsStack from "./_components/StackingProjects";
+import Testimonials from "./_components/Testimonials";
 
 export default function Home() {
   return (
@@ -11,7 +10,7 @@ export default function Home() {
       <Hero />
       <Intro />
       <ServiceSection />
-      <ProjectsStack projects={projects} />
+      <ProjectsStack />
       <Testimonials />
     </main>
   );

@@ -42,7 +42,7 @@ function Testimonials() {
      
       <h2
         id="testimonials-span"
-        className="text-orange-700 absolute w-fit h-fit z-9001"
+        className="text-orange-700 absolute text-lead h-fit z-91 whitespace-nowrap"
       >
         {"// Testimonials"}
       </h2>

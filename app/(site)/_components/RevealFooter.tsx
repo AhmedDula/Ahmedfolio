@@ -126,7 +126,7 @@ export default function RevealFooter() {
       <Image
         id="footer-img"
         src="/ahmed-Photoroom.avif"
-        className="object-cover sm:object-contain grayscale w-full h-[120%] top-10 absolute -z-1"
+        className="object-cover sm:object-contain grayscale w-full h-full absolute -z-2"
         width={1200}
         height={1080}
         preload
